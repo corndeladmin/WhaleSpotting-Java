@@ -1,13 +1,8 @@
 package com.whalespottingjava.models.requests;
 
 public class MemberRegistrationRequest {
-    // TODO 409: Find right library for notnull and notempty
-//    @NotNull
-//    @NotEmpty
     private String username;
 
-//    @NotNull
-//    @NotEmpty
     private String password;
 
     public String getUsername() {

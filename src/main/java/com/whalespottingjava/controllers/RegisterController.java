@@ -36,7 +36,6 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    // TODO 409: @Valid on request here?
     public RedirectView onRegistrationSubmit(
             @ModelAttribute MemberRegistrationRequest memberRegistrationRequest,
             HttpServletRequest servletRequest
