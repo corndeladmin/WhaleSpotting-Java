@@ -21,9 +21,16 @@ public class Member {
 
     protected Member() {}
 
+    public Member(String username, String password, MemberRole role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
     public Member(String username, String password) {
         this.username = username;
         this.password = password;
+        this.role = MemberRole.USER;
     }
 
     public String getUsername() {
