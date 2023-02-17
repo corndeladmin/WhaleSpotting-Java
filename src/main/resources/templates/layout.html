@@ -23,8 +23,10 @@
                 <a class="navbar-link" th:href="@{/admin}">Admin</a>
             </li>
             <li class="navbar-item">
-                <form class="navbar-link" th:action="@{/logout}" method="post">Sign Out</form>
-<!--                <a class="navbar-link" th:href="@{/logout}">Sign Out</a>-->
+                <a class="navbar-link" href="javascript: document.logoutForm.submit()">Sign Out</a>
+                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+                    <input hidden type="submit"/>
+                </form>
             </li>
             <li class="navbar-item">
                 <a class="navbar-link" th:href="@{/register}">Register</a>

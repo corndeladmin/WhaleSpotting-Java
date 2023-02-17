@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="https://www.thymeleaf.org"
-      layout:decorate="layout">
+      layout:decorate="layout"
+>
     <head>
         <title>Members</title>
     </head>
@@ -10,10 +10,6 @@
         <section layout:fragment="content">
             <h1 >Members</h1>
             <p>Only users who are logged in should be able to access this page!</p>
-<!--            TODO 409: Move log out button from here to nav bar -->
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
-            </form>
         </section>
     </body>
 </html>
