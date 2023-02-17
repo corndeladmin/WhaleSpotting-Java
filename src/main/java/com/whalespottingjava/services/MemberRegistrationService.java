@@ -23,11 +23,6 @@ public class MemberRegistrationService {
 
     public Member registerMember(MemberRegistrationRequest request) {
         String encodedPassword = authenticationHelper.passwordEncoder().encode(request.getPassword());
-        Member newMember = new Member(
-                request.getUsername(),
-                encodedPassword
-        );
-
-        return memberRepository.save(newMember);
+        return memberRepository.save(new Member(request.getUsername(), encodedPassword));
     }
 }
