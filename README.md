@@ -1,6 +1,7 @@
 # Whalespotting
 
-[//]: # (TODO 409: Update this from Python)
+## Getting Started
+
 1. Fork this repo
     * Go to this repo's GitHub page ({url here})
     * Click `Fork` in the top-right of the page - this will create a copy of this repo in **your own GitHub account**
@@ -18,20 +19,14 @@
 4. Open a command-prompt in this same folder.  
    Your trainer can show you how to do this, if you need any help.
 
-[//]: # (5. Run this command to set up the necessary dependencies:  )
+5. Make sure you've got PostgreSQL installed. You'll notice that your `application.properties` file contains POSTGRES config variables. As well as installing Postgres we need to make sure we have a user set up to match that config, with the right permissions to create the database when the app runs. All instructions for this step are in the `Setting up Postgres` section below.
 
-[//]: # (   `poetry install`)
+6. Run this command to run your code:  
 
-[//]: # ()
-[//]: # (6. Copy the `.env-template` file to a new `.env` file. This `.env` file shouldn't ever be committed &#40;and is already included in the `.gitignore`&#41; as it may contain secrets.)
+   `./gradlew bootRun`
 
-[//]: # ()
-[//]: # (7. Make sure you've got PostgreSQL installed. You'll notice that your `.env` file contains POSTGRES config variables. As well as installing Postgres we need to make sure we have a user set up to match that config, with the right permissions to create the database when the app runs. All instructions for this step are in the `Install Postgres` section below.)
+7. You should now be able to find your code running at: `http://localhost:8080/`
 
-[//]: # ()
-[//]: # (8. Run this command to run your code:  )
-
-[//]: # (   `poetry run flask run`)
 
 ## Setting up Postgres
 
@@ -87,10 +82,15 @@ Lastly you'll need to set up a Whalespotting database. This can also be done fro
 
 3. Click `Create`.
 
-## Migrations
+## Existing admin user
 
-[//]: # (TODO 409)
+There is an admin user already set up for you in the database (add in migration `V2__added_admin_member.sql`):
 
-## Existing Whalespotting app users
+```
+username: admin
+password: adminpassword
 
-[//]: # (TODO 409)
+role: ADMIN
+```
+
+You should be able to create more users by running the app and visiting `http://localhost:8080/register` or adding them straight to your database.
