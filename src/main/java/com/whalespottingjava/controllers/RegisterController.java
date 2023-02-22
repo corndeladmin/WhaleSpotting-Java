@@ -1,6 +1,5 @@
 package com.whalespottingjava.controllers;
 
-import com.whalespottingjava.models.database.Member;
 import com.whalespottingjava.models.requests.MemberRegistrationRequest;
 import com.whalespottingjava.services.MemberLoginService;
 import com.whalespottingjava.services.MemberRegistrationService;
@@ -12,13 +11,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Controller
 public class RegisterController {
-    private MemberRegistrationService memberRegistrationService;
-    private MemberLoginService memberLoginService;
+    private final MemberRegistrationService memberRegistrationService;
+    private final MemberLoginService memberLoginService;
 
     @Autowired
     public RegisterController(
@@ -28,6 +29,8 @@ public class RegisterController {
         this.memberRegistrationService = memberRegistrationService;
         this.memberLoginService = memberLoginService;
     }
+
+    private final Logger logger = Logger.getAnonymousLogger();
 
     @GetMapping("/register")
     public String getRegistrationForm(Model model) {
@@ -39,19 +42,13 @@ public class RegisterController {
     public RedirectView onRegistrationSubmit(
             @ModelAttribute MemberRegistrationRequest memberRegistrationRequest,
             HttpServletRequest servletRequest
-    ) {
-        try {
-            memberRegistrationService.registerMember(memberRegistrationRequest);
-            memberLoginService.loginMember(
-                    servletRequest,
-                    memberRegistrationRequest.getUsername(),
-                    memberRegistrationRequest.getPassword()
-            );
-        } catch (ServletException e) {
-            // TODO 409: handle login error
-        } catch (Exception e) {
-            // TODO 409: Pass error back to display somehow
-        }
+    ) throws ServletException {
+        memberRegistrationService.registerMember(memberRegistrationRequest);
+        memberLoginService.loginMember(
+                servletRequest,
+                memberRegistrationRequest.getUsername(),
+                memberRegistrationRequest.getPassword()
+        );
 
         return new RedirectView("members");
     }
