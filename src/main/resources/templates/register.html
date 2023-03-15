@@ -3,32 +3,29 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="layout">
     <head>
-        <title>Login</title>
+        <title>Register</title>
     </head>
     <body>
         <section layout:fragment="content">
-            <h1>Log In</h1>
+            <h1>Register</h1>
             <div th:if="${param.error}">
-                Invalid username and password.
+                There was an error completing registration.
             </div>
-            <div th:if="${param.logout}">
-                You have been logged out.
-            </div>
-            <form th:action="@{/login}" method="post">
+            <form th:action="@{/register}" method="post" th:object="${member}">
                 <div>
                     <label>
                         Username:
-                        <input type="text" name="username"/>
+                        <input type="text" name="username" th:field="*{username}"/>
                     </label>
                 </div>
                 <div>
                     <label>
                         Password:
-                        <input type="password" name="password"/>
+                        <input type="password" name="password" th:field="*{password}"/>
                     </label>
                 </div>
                 <div>
-                    <input type="submit" value="Sign In"/>
+                    <input type="submit" value="Submit"/>
                 </div>
             </form>
         </section>
