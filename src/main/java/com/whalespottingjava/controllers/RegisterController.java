@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 @Controller
 public class RegisterController {
     private final MemberRegistrationService memberRegistrationService;
@@ -30,7 +27,6 @@ public class RegisterController {
         this.memberLoginService = memberLoginService;
     }
 
-    private final Logger logger = Logger.getAnonymousLogger();
 
     @GetMapping("/register")
     public String getRegistrationForm(Model model) {

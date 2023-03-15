@@ -9,8 +9,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class MemberDetails implements UserDetails {
-    private Member member;
-    private String ROLE_PREFIX = "ROLE_";
+    private final Member member;
 
     public MemberDetails(Member member) {
         this.member = member;
@@ -22,6 +21,7 @@ public class MemberDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        String ROLE_PREFIX = "ROLE_";
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority(ROLE_PREFIX + member.getRole().toString());
         return List.of(authority);
     }

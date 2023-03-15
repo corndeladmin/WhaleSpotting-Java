@@ -4,7 +4,6 @@ import com.whalespottingjava.models.enums.MemberRole;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "member")
 public class Member {
     private static final String ID_SEQUENCE = "member_id_sequence";
 
