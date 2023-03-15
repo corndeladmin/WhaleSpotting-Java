@@ -14,7 +14,7 @@ public class AuthenticationHelper {
 
     @Autowired
     public AuthenticationHelper(
-        MemberDetailsService memberDetailsService
+            MemberDetailsService memberDetailsService
     ) {
         this.memberDetailsService = memberDetailsService;
     }

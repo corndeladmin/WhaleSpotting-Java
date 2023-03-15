@@ -19,7 +19,7 @@ public class WebSecurityConfig {
     private final AuthenticationHelper authHelper;
 
     public WebSecurityConfig(
-        AuthenticationHelper authenticationHelper
+            AuthenticationHelper authenticationHelper
     ) {
         this.authHelper = authenticationHelper;
     }
