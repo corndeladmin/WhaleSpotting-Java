@@ -20,7 +20,7 @@
 
 5. Make sure you've got PostgreSQL installed. You'll notice that your `application.properties` file contains POSTGRES config variables. As well as installing Postgres we need to make sure we have a user set up to match that config, with the right permissions to create the database when the app runs. All instructions for this step are in the `Setting up Postgres` section below.
 
-6. In IntelliJ, you should see `Run Whale-Spotting` config set up in the top right. Click play to run the code using this config. Alternatively run `./gradlew bootRun` from the terminal.
+6. Run `./gradlew run` in the console.
 
 7. You should now be able to find your code running at: `http://localhost:8080/`
 
