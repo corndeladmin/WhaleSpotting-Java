@@ -13,7 +13,7 @@
       Your trainer will able to help you with this.
 
 3. "Cloning the repo" will create a folder on your computer with the files from this repo.  
-   Open this folder in IntelliJ.
+   Open this folder in VSCode.
 
 4. Open a command-prompt in this same folder.  
    Your trainer can show you how to do this, if you need any help.
