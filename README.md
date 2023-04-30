@@ -18,7 +18,7 @@
 4. Open a command-prompt in this same folder.  
    Your trainer can show you how to do this, if you need any help.
 
-5. Make sure you've got PostgreSQL installed. You'll notice that your `application.properties` file contains some config variables prefixed `spring.datasource`. We need to make sure we have a Postgres user set up to match that config, with the right permissions to create the database when the app runs. All instructions for this step are in the `Setting up Postgres` section below.
+5. Follow the instructions in the `Setting up Postgres` section below to ensure that PostgreSQL is installed and setup correctly. (You'll notice that your `application.properties` file contains some config variables prefixed `spring.datasource`. We need to make sure we have a Postgres user set up to match that config, with the right permissions to create the database when the app runs.)
 
 6. Run `./gradlew run` in the console.
 
