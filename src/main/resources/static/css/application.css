@@ -59,7 +59,7 @@
     color: white;
     display: flex;
     /*flex-direction: row;*/
-    flex-direction: column;
+    /* flex-direction: column; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 1rem;
     position: fixed;
@@ -67,7 +67,8 @@
     font-size: 1rem;
     font-weight: 500;
     white-space: nowrap;
-
+    width: 100%;
+    justify-content: space-around;
 }
 
 
