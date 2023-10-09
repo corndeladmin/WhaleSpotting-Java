@@ -50,3 +50,37 @@
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Footer */
+
+.footer-container {
+    background-color: rgba(27, 61, 175, 0.849);
+    bottom: 0;
+    color: white;
+    display: flex;
+    /*flex-direction: row;*/
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1rem;
+    position: fixed;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+}
+
+
+.footer-container a {
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+/*
+    sm: @media (min-width: 640px) { ... }
+    md: @media (min-width: 768px) { ... }
+    lg: @media (min-width: 1024px) { ... }
+*/
