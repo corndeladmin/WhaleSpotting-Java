@@ -1,0 +1,51 @@
+.page-container {
+    background-color: #42BFDD;
+}
+
+#main-section {
+    display: flex;
+    height: fit-content;
+}
+
+.content-container {
+    margin: 0px;
+    height: 100vh;
+    flex-direction: row;
+}
+
+#endpoint-list-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1D77C3;
+    width: 25%;
+}
+
+.endpoint-list-element {
+    color: white;
+    display: flex;
+    height: 7.5vh;
+    flex-shrink: 0;
+    justify-content: left;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.endpoint-list-element:hover {
+    background-color: #064172;   
+}
+
+#view-quickstart-shortcut {
+    position: sticky;
+    top: 0;
+    background-color: #064172;
+}
+
+#quickstart-guide-container {
+    color: black;
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+#quickstart-guide-description {
+
+}
