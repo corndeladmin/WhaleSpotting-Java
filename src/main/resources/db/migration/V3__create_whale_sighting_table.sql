@@ -9,5 +9,4 @@ CREATE TABLE whale_sighting
     latitude   bigint,
     longitude  bigint,
     approved   boolean
-
 );
