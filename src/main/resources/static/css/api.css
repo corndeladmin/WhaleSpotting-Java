@@ -46,10 +46,6 @@
     padding-top: 2%;
 }
 
-#quickstart-guide-description {
-
-}
-
 @media (max-width: 640px) {
     #main-section {
         display: flex;
