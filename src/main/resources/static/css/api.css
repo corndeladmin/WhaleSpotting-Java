@@ -49,3 +49,18 @@
 #quickstart-guide-description {
 
 }
+
+@media (max-width: 640px) {
+    #main-section {
+        display: flex;
+        height: fit-content;
+        flex-direction: column-reverse;
+    }
+
+    #endpoint-list-container {
+        display: flex;
+        flex-direction: column;
+        background-color: #1D77C3;
+        width: 100%;
+    }
+}
