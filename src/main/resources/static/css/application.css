@@ -45,8 +45,50 @@
 .content-container {
     display: flex;
     flex-direction: column;
-
+    height:100%;
     margin: 2rem 4rem;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.register-form {
+    display: flex;
+    justify-content:center;
+   font-size: 30px;
+   height: 200%;
+}
+
+.register-heading {
+text-align: center;
+margin-top: 4rem;
+font-size: 40px;
+}
+
+.register-inputs {
+    width:75%;
+    display: flex;
+    flex-direction:column;
+    margin-bottom:1rem;
+}
+
+.register-body{
+height:1000px;
+}
+
+
+.input-container
+{
+width:50%;
+display:flex;
+flex-direction:column;
+align-items: center;
+
+}
+.register-textfields{
+height:2rem;
+}
+
+
+
+
+
