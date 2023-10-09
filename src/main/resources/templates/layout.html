@@ -6,6 +6,9 @@
 
     <link th:href="@{/css/application.css}" rel="stylesheet" />
 
+    /* icone link for GitHUb */
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Whale Spotting</title>
 </head>
 <body class="page-container">
@@ -46,7 +49,12 @@
         <div class="footer-container">
             <div>WhaleSpotting</div>
             <div><i class="fa fa-github"></i><a  href="https://github.com/charlottemothersole/WhaleSpotting-Java"> Github repository </a></div>
-            <div>©Copyright 2023, BootCamp Project Amex</div>
+            <div>©Copyright <span id="currentYear"></span>, BootCamp Project Amex</div>
+            <script>
+            const currentDate = new Date();
+            let currentYear = currentDate.getFullYear();
+            document.getElementById("currentYear").innerHTML = currentYear;
+            </script>
         </div>
     </footer>
 
