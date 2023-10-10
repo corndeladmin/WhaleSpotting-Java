@@ -1,6 +1,4 @@
 
-.page-container {
-=======
 :root {
   --darkest-blue: #062844;
   --medium-blue: #062844;
@@ -14,7 +12,7 @@
 
 .content-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: rgba(27, 61, 175, 0.849);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -26,13 +24,6 @@
     font-weight: 200;
     white-space: nowrap;
     padding: 1rem;
-}
-
-    flex-direction: column;
-
-    margin: 2rem 4rem;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Footer */
@@ -69,13 +60,6 @@
     color: white;
     text-decoration: none;
 }
-
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 .footer-container a:hover {
   text-decoration: underline;
