@@ -6,28 +6,28 @@
     <title>Register</title>
 </head>
 <body class="page-container">
-<section layout:fragment="content">
-    <div class="register-heading">
-        <h1>Register Now</h1>
-    </div>
-    <div th:if="${param.error}">
-        There was an error completing registration.
-    </div>
-    <form class="register-form" method="post" th:action="@{/register}" th:object="${member}">
-        <div class="input-container">
-            <div class="register-inputs">
-                <label for="username"> Username </label>
-                <input class="register-textfields" id="username" name="username" th:field="*{username}" type="text"/>
-            </div>
-            <div class="register-inputs">
-                <label> Password </label>
-                <input class="register-textfields" name="password" th:field="*{password}" type="password"/>
-            </div>
-            <div class="register-inputs">
-                <input class="register-textfields" type="submit" value="Submit"/>
-            </div>
+    <section layout:fragment="content">
+        <div class="register-heading">
+            <h1>Register Now</h1>
         </div>
-    </form>
-</section>
+        <div th:if="${param.error}">
+            There was an error completing registration.
+        </div>
+        <form class="register-form" method="post" th:action="@{/register}" th:object="${member}">
+            <div class="input-container">
+                <div class="register-inputs">
+                    <label for="username"> Username </label>
+                    <input class="register-textfields" id="username" name="username" th:field="*{username}" type="text"/>
+                </div>
+                <div class="register-inputs">
+                    <label> Password </label>
+                    <input class="register-textfields" name="password" th:field="*{password}" type="password"/>
+                </div>
+                <div class="register-inputs">
+                    <input class="register-textfields" type="submit" value="Submit"/>
+                </div>
+            </div>
+        </form>
+    </section>
 </body>
 </html>
