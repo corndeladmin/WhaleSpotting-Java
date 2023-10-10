@@ -4,9 +4,10 @@
       layout:decorate="layout">
     <head>
         <title>Login</title>
+        <link th:href="@{/css/login.css}" rel="stylesheet" />
     </head>
     <body>
-        <section layout:fragment="content">
+        <section layout:fragment="content
             <h1>Log In</h1>
             <div th:if="${param.error}">
                 Invalid username and password.
