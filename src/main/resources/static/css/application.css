@@ -1,52 +1,97 @@
+
+:root {
+  --darkest-blue: #062844;
+  --medium-blue: #062844;
+  --darker-blue: #1d77c3;
+  --lightest-blue: #42bfdd;
+}
+
 .page-container{
     margin: 0;
 }
 
-.navbar-container {
+.content-container {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
     background-color: rgba(27, 61, 175, 0.849);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar-icon {
     color: rgba(255, 255, 255, 0.833);
-
     text-decoration: none;
     font-size: 2.5rem;
     font-weight: 200;
     white-space: nowrap;
-
     padding: 1rem;
 }
 
-.navbar {
+/* Footer */
+
+
+.footer-container {
+    background-color: rgba(27, 61, 175, 0.849);
+    bottom: 0;
     display: flex;
+
     flex-direction: row;
     list-style: none;
-
     padding-left: 1rem;
-}
 
-.navbar-item {
-    padding: 1rem;
-}
-
-.navbar-link {
-    color: rgba(255, 255, 255, 0.642);
-
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-
-    margin: 2rem 4rem;
-
+    flex-wrap: wrap;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0rem;
+    position: fixed;
+    /*white-space: nowrap; */
+    width: 100%;
+    justify-content: space-around;
+
+}
+
+.footer-container  > div {
+  color: white;
+  width: 33%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.footer-container a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+
+}
+
+.register-form {
+    display: flex;
+    justify-content:center;
+    font-size: 30px;
+}
+
+.register-heading {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 40px;
+}
+
+.register-inputs {
+    width:75%;
+    display: flex;
+    flex-direction:column;
+    margin-bottom:1rem;
+}
+
+.input-container {
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.register-textfields {
+    height:2rem;
 }
