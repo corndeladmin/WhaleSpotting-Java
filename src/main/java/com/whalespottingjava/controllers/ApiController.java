@@ -4,6 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 public class ApiController {
     @GetMapping("/api")
@@ -12,12 +14,9 @@ public class ApiController {
     }
 
     @PostMapping("/api")
-    @CrossOrigin(origins = "*")
-    public HttpStatus postWhale(
-            @PathVariable String whaleName
-    ) {
-        System.out.println(whaleName);
+    public String postWhale() {
+//        System.out.println(whaleName);
 
-        return HttpStatus.OK;
+        return "OK";
     }
 }
