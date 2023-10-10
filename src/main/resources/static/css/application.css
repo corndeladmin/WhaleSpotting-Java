@@ -1,23 +1,20 @@
-.page-container{
+.page-container {
     margin: 0;
 }
 
 .navbar-container {
     display: flex;
     flex-direction: row;
-
     background-color: rgba(27, 61, 175, 0.849);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar-icon {
     color: rgba(255, 255, 255, 0.833);
-
     text-decoration: none;
     font-size: 2.5rem;
     font-weight: 200;
     white-space: nowrap;
-
     padding: 1rem;
 }
 
@@ -25,7 +22,6 @@
     display: flex;
     flex-direction: row;
     list-style: none;
-
     padding-left: 1rem;
 }
 
@@ -47,21 +43,19 @@
     flex-direction: column;
     height:100%;
     margin: 2rem 4rem;
-
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .register-form {
     display: flex;
     justify-content:center;
-   font-size: 30px;
-   height: 200%;
+    font-size: 30px;
 }
 
 .register-heading {
-text-align: center;
-margin-top: 4rem;
-font-size: 40px;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 40px;
 }
 
 .register-inputs {
@@ -71,24 +65,18 @@ font-size: 40px;
     margin-bottom:1rem;
 }
 
-.register-body{
-height:1000px;
+/*.register-body {
+    height:1000px;
+    margin: 0px;
+}*/
+
+.input-container {
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
 }
 
-
-.input-container
-{
-width:50%;
-display:flex;
-flex-direction:column;
-align-items: center;
-
+.register-textfields {
+    height:2rem;
 }
-.register-textfields{
-height:2rem;
-}
-
-
-
-
-
