@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html layout:decorate="layout">
     <head lang="en"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     xmlns:th="https://www.thymeleaf.org">
@@ -7,7 +7,7 @@
     <link th:href="@{/css/application.css}" rel="stylesheet" />
     </head>
     <body>
-        <div class="content-container">
+        <div layout:fragment="content">
             <h1 id="add-sighting-header">Add a whale sighting</h1>
             <p id="add-sighting-details">Please add the details of your sighting below.</p>
             <form id="add-sighting" action="" method="POST">
