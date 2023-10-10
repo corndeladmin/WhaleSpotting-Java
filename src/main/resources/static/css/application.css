@@ -1,8 +1,18 @@
+
 .page-container {
+=======
+:root {
+  --darkest-blue: #062844;
+  --medium-blue: #062844;
+  --darker-blue: #1d77c3;
+  --lightest-blue: #42bfdd;
+}
+
+.page-container{
     margin: 0;
 }
 
-.navbar-container {
+.content-container {
     display: flex;
     flex-direction: row;
     background-color: rgba(27, 61, 175, 0.849);
@@ -18,31 +28,58 @@
     padding: 1rem;
 }
 
-.navbar {
+    flex-direction: column;
+
+    margin: 2rem 4rem;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Footer */
+
+
+.footer-container {
+    background-color: rgba(27, 61, 175, 0.849);
+    bottom: 0;
     display: flex;
+
     flex-direction: row;
     list-style: none;
     padding-left: 1rem;
+
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0rem;
+    position: fixed;
+    /*white-space: nowrap; */
+    width: 100%;
+    justify-content: space-around;
+
 }
 
-.navbar-item {
-    padding: 1rem;
+.footer-container  > div {
+  color: white;
+  width: 33%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.navbar-link {
-    color: rgba(255, 255, 255, 0.642);
-
+.footer-container a {
+    color: white;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    white-space: nowrap;
 }
+
 
 .content-container {
     display: flex;
     flex-direction: column;
     margin: 2rem 4rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.footer-container a:hover {
+  text-decoration: underline;
+
 }
 
 .register-form {
