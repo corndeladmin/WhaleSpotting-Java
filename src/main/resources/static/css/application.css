@@ -1,11 +1,10 @@
-/*
-Darkest-Blue: #062844
-Medium-Blue: #064172
-Darker-Blue: #1D77C3
-Lightest-Blue: #42BFDD
-*/
-
-
+:root {
+/* Palette */
+  --darkest-blue: #062844;
+  --medium-blue: #062844;
+  --darker-blue: #1d77c3;
+  --lightest-blue: #42bfdd;
+}
 
 .page-container{
     margin: 0;
@@ -60,35 +59,85 @@ Lightest-Blue: #42BFDD
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Admin Pending sightings */
+
+.sightings-pending-container {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: var(--darker-blue);
+    width: 100%;
+    padding: 1rem;
+}
+
+.sightings-pending-container h1{
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      padding: 1rem;
+}
+
+.pending-sightings-admin-form {
+    border: 5px solid #42bfdd;
+    border-radius: 25px;
+    padding: 5rem;
+}
+
+/* radio button to validate sight */
+.checkboxgroup input[type="radio"]{
+    height:20px;
+    width:20px;
+    margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+    	.checkboxgroup input[type="radio"]{ height:15px; width:15px; margin-top: 2px;}
+}
+
+.checkboxgroup {
+   display: inline-block;
+   text-align: center;
+   padding: 2rem;
+ }
+.checkboxgroup label {
+ display: block;
+}
+
 /* Footer */
 
-.footer-container {
+footer {
     background-color: rgba(27, 61, 175, 0.849);
+    height: 3rem;
+    margin-top: auto;
+    width: 100%;
+    position: fixed;
     bottom: 0;
+    padding-top: 1rem;
+}
+
+
+.footer-container {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 0rem;
-    position: fixed;
-    /*white-space: nowrap; */
-    width: 100%;
     justify-content: space-around;
 }
 
 .footer-container  > div {
   color: white;
-  width: 33%;
+  width: 30%;
+  height: 80%;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-
-
-
-
-
-
+@media (max-width: 640px) {
+  	.footer-container  > div {font-size:0.7rem;}
+} 	
+  	
 .footer-container a {
     color: white;
     text-decoration: none;
@@ -97,9 +146,3 @@ Lightest-Blue: #42BFDD
 .footer-container a:hover {
   text-decoration: underline;
 }
-
-/*
-    sm: @media (min-width: 640px) { ... }
-    md: @media (min-width: 768px) { ... }
-    lg: @media (min-width: 1024px) { ... }
-*/

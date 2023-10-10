@@ -8,8 +8,65 @@
     </head>
     <body>
         <section layout:fragment="content">
-            <h1>Admins</h1>
-            <p>Only members with the Admin role should be able to get here!</p>
+            <div class="sightings-pending-container">
+
+                <h1>Pending Sightings</h1>
+                <p>Only members with the Admin role should be able to get here!</p>
+                <div th:if="${param.error}">
+                    There was an error loading the pending sightings.
+                </div>
+
+                <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
+                    <label class="radio-inline">
+                        <input type="radio" value="approve" name="radioOption">Approve
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="reject" name="radioOption">Reject
+                    </label>
+                    <input type="submit" value="Submit">
+                </form>
+
+                <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
+                        <div class="checkboxgroup">
+                            <label for="radio_button_id1">Approve</label>
+                            <input type="radio" name="radio" id="radio_button_id1" />
+                        </div>
+                    <div class="checkboxgroup">
+                        <label for="radio_button_id2">Reject</label>
+                        <input type="radio" name="radio" id="radio_button_id2" />
+                    </div>
+
+                </form>
+
+                <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
+                    <table>
+                        <tr>
+                            <th>Location</th>
+                            <th>Whales</th>
+                            <th>User</th>
+                            <th>Reject</th>
+                            <th>Approve</th>
+                        </tr>
+                        <tr>
+                            <td>First location</td>
+                            <td>Willy</td>
+                            <td>Member1</td>
+                            <td><input type="radio"/></td>
+                            <td><input type="radio"/></td>
+                        </tr>
+                        <tr>
+                            <td>location2</td>
+                            <td>Willy2</td>
+                            <td>Member2</td>
+                            <td><input type="radio"/></td>
+                            <td><input type="radio"/></td>
+                        </tr>
+                    </table>
+
+                </form>
+
+            </div>
+
         </section>
     </body>
 </html>
