@@ -5,7 +5,19 @@ Darker-Blue: #1D77C3
 Lightest-Blue: #42BFDD
 */
 
+body {
+    background-color: #42BFDD;
+}
+
 #add-sighting {
     display: flex;
     flex-direction: column;
 }
+
+form > input {
+    margin: 10px 0;
+    padding: 7px 5px;
+    border: none;
+    border-radius: 5px;
+}
+
