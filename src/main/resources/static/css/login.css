@@ -2,12 +2,18 @@
         .label-container {font-size: 24px;}
         .input-field {min-width: 220px;}
         .form-container {gap: 1.25rem;}
+        .invalid-state {font-size: 14px;}
+        .warning-state {font-size: 14px;}
+        .login-button {font-size: 20px;}
 	}
 
 @media (max-width: 640px) {
         .label-container {font-size: 14px;}
         .input-field {min-width: 150px;}
         .form-container {gap: 0.75rem;}
+        .invalid-state {font-size: 10px;}
+        .warning-state {font-size: 10px;}
+        .login-button {font-size: 14px;}
     }
 
 .login-container {
@@ -33,6 +39,17 @@
     margin-left: auto;
 }
 
+.login-button > input {
+    font-weight: 400;
+	text-align: center;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	color: #fff;
+	background-color: #007bff;
+}
+
 .input-field {
     border: 1px solid black;
     border-radius: .25rem;
@@ -43,4 +60,12 @@
     bottom: 0;
     width: 100%;
     z-index: -1;
+}
+
+.invalid-state {
+    color: crimson;
+}
+
+.warning-state {
+    color: grey;
 }
