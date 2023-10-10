@@ -1,0 +1,4 @@
+ALTER TABLE "member"
+ADD COLUMN email TEXT,
+ADD COLUMN first_name TEXT,
+ADD COLUMN surname TEXT;
