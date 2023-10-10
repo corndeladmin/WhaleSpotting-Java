@@ -4,9 +4,10 @@
       layout:decorate="layout">
     <head>
         <title>Login</title>
+        <link th:href="@{/css/login.css}" rel="stylesheet" />
     </head>
     <body>
-        <section layout:fragment="content">
+        <section class="login-container" layout:fragment="content">
             <h1>Log In</h1>
             <div th:if="${param.error}">
                 Invalid username and password.
@@ -14,15 +15,15 @@
             <div th:if="${param.logout}">
                 You have been logged out.
             </div>
-            <form th:action="@{/login}" method="post">
+            <form class="form-container" th:action="@{/login}" method="post">
                 <div>
-                    <label>
+                    <label class="label-container">
                         Username:
                         <input type="text" name="username"/>
                     </label>
                 </div>
                 <div>
-                    <label>
+                    <label class="label-container">
                         Password:
                         <input type="password" name="password"/>
                     </label>
