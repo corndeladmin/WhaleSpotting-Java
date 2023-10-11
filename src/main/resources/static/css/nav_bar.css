@@ -1,13 +1,16 @@
 @media (min-width: 640px) {
-	.navbar-container{flex-direction: row !important;}
+	.navbar-container{flex-direction: row;}
 	.navbar {gap:1rem;}
 	.navbar-item{padding: 1rem;}
-	.navbar-item:last-child {padding-right: 1rem;}
+	.navbar-item:last-child {padding-right: 1rem; margin-left: auto;}
 	}
+
+@media (max-width: 640px) {
+    .navbar-container{flex-direction: column;}
+}
 
 .navbar-container {
     display: flex;
-    flex-direction: column;
     background-color: #064172;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -23,6 +26,7 @@
     padding-left: 0px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
     width:100%;
     gap:0.25rem;
@@ -33,10 +37,6 @@
     padding: 0.25rem;
     justify-content: center;
     align-items: center;
-}
-
-.navbar-item:last-child {
-    margin-left: auto;
 }
 
 .navbar-link {
