@@ -1,11 +1,11 @@
 @media (min-width: 640px) {
-        .label-container {font-size: 24px;}
-        .input-field {min-width: 220px;}
-        .form-container {gap: 1.25rem;}
-        .invalid-state {font-size: 14px;}
-        .warning-state {font-size: 14px;}
-        .login-button {font-size: 20px;}
-	}
+    .label-container { font-size: 24px; }
+    .input-field { min-width: 220px; }
+    .form-container { gap: 1.25rem; }
+    .invalid-state { font-size: 14px; }
+    .warning-state { font-size: 14px; }
+    .login-button { font-size: 20px; }
+}
 
 @media (max-width: 640px) {
         .label-container {font-size: 14px;}
