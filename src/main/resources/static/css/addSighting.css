@@ -1,0 +1,11 @@
+/*
+Darkest-Blue: #062844
+Medium-Blue: #064172
+Darker-Blue: #1D77C3
+Lightest-Blue: #42BFDD
+*/
+
+#add-sighting {
+    display: flex;
+    flex-direction: column;
+}
