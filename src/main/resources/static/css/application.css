@@ -1,9 +1,9 @@
 :root {
 /* Palette */
-  --darkest-blue: #062844;
-  --medium-blue: #062844;
-  --darker-blue: #1d77c3;
-  --lightest-blue: #42bfdd;
+   --darkest-blue: #062844;
+   --medium-blue: #064172;
+   --darker-blue: #1d77c3;
+   --lightest-blue: #42bfdd;
 }
 
 .page-container{
@@ -78,66 +78,87 @@
       padding: 1rem;
 }
 
-.pending-sightings-admin-form {
+.sightings-pending-admin-form {
     border: 5px solid var(--lightest-blue);
     border-radius: 25px;
-    padding: 5rem;
-    margin: 1rem;
+    padding: 3rem 1rem;;
+    margin: 4rem 1rem 1rem;
 }
 
-pending-sightings-table {
-
-
+.sight {
+    display: inline-block;
+    padding-right: 4rem;
 }
 
-td {
-  text-align: center;
+.sight span{
+    padding: 2rem;
+    display: inline-block;
 }
 
-th {
-  height: 70px;
+.button-submit-sights input[type="submit"]{
+    background-color: var(--medium-blue);
+    color: var(--darker-blue);
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    border:none;
+    border-radius:10px;
+    position: relative;
 }
-tr
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+.button-submit-sights input[type="submit"]:hover {
+  background-color: var(--darkest-blue);
+  color: white;
 }
 
 /* radio button to validate sight */
 .checkboxgroup input[type="radio"]{
     height:20px;
     width:20px;
-    margin-top: 10px;
-}
-
-@media (max-width: 640px) {
-    	.checkboxgroup input[type="radio"]{ height:15px; width:15px; margin-top: 2px;}
-    	.sightings-pending-container h1 {font-size: 1.5rem; font-weight:600;}
-    	.sightings-pending-container {font-size:1rem;}
-    	.pending-sightings-admin-form {padding:2rem;}
+    margin-top: 30px;
 }
 
 .checkboxgroup {
    display: inline-block;
    text-align: center;
-   padding: 2rem;
+   padding: 1rem;
  }
 .checkboxgroup label {
  display: block;
 }
 
+@media screen and (max-width: 768px) {
+    .checkboxgroup input[type="radio"]{ height:15px; width:15px; margin-top: 10px;}
+    .sightings-pending-container h1 {font-size: 1.5rem; font-weight:600;}
+    .sightings-pending-container {font-size:1rem;}
+    .sightings-pending-admin-form {padding:2rem;}
+    .pending-sigh {padding:0;}
+    .button-submit-sights input[type="submit"] {font-size: 1rem; padding: 1rem;}
+    .flex-container-for-submit {justify-content: center;}
+}
+
+.flex-container-for-submit {
+    display: flex;
+    justify-content: right;
+}
+
+/* 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+*/
+
+
+
 /* Footer */
 
 footer {
     background-color: rgba(27, 61, 175, 0.849);
-    height: 3rem;
+    height: 4%;
     margin-top: auto;
     width: 100%;
     position: fixed;
     bottom: 0;
     padding-top: 1rem;
-    overflow-x: auto;
 }
 
 

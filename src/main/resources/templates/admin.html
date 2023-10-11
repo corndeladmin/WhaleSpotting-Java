@@ -16,45 +16,53 @@
                     There was an error loading the pending sightings.
                 </div>
 
-                <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
-                        <div class="checkboxgroup">
-                            <label for="radio_button_id1">Approve</label>
-                            <input type="radio" name="radio" id="radio_button_id1" />
+                <form  th:action="@{/admin}" method="post" th:object="${sight}">
+
+                    <div class="sightings-pending-admin-form">
+
+                        <div class="sight">
+                            <span>Location: latitute1   longitude1</span>
+                            <span>Whales1</span>
+                            <span>User1</span>
                         </div>
-                    <div class="checkboxgroup">
-                        <label for="radio_button_id2">Reject</label>
-                        <input type="radio" name="radio" id="radio_button_id2" />
+
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id2">Reject</label>
+                            <input type="radio" name="radio1" value="reject" id="radio-button-id2" />
+                        </div>
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id1">Approve</label>
+                            <input type="radio" name="radio1" value="approve" id="radio-button-id1" />
+                        </div>
+
+                    </div>
+
+                    <div class="sightings-pending-admin-form">
+
+                        <div class="sight">
+                            <span>Location: latitute2   longitude2</span>
+                            <span>Whales2</span>
+                            <span>User2</span>
+                        </div>
+
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id3">Reject</label>
+                            <input type="radio" name="radio2" value="reject" id="radio-button-id3" />
+                        </div>
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id4">Approve</label>
+                            <input type="radio" name="radio12" value="approve" id="radio-button-id4" />
+                        </div>
+
+                    </div>
+
+                    <div class="flex-container-for-submit">
+                        <div class="button-submit-sights" >
+                            <input type="submit" value="Submit">
+                        </div>
                     </div>
 
                 </form>
-
-                <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
-                    <table class="pending-sightings-table">
-                        <tr>
-                            <th>Location</th>
-                            <th>Whales</th>
-                            <th>User</th>
-                            <th><label for="radio-button-reject">Reject</label></th>
-                            <th><label for="radio-button-approve">Approve</label></th>
-                        </tr>
-                        <tr>
-                            <td>location1</td>
-                            <td>Willy</td>
-                            <td>Member1</td>
-                            <td><input type="radio" name="radio1" value="reject" id="radio-button-reject" /></td>
-                            <td><input type="radio" name="radio1" value="approve" id="radio-button-approve"/></td>
-                        </tr>
-                        <tr>
-                            <td>location2</td>
-                            <td>Willy2</td>
-                            <td>Member2</td>
-                            <td><input type="radio" name="radio2" value="reject" id="radio-button-reject2" /></td>
-                            <td><input type="radio" name="radio2" value="approve" id="radio-button-approve2"/></td>
-                        </tr>
-                    </table>
-
-                </form>
-
             </div>
 
         </section>
