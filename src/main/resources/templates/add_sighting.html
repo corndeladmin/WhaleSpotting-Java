@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head lang="en"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    xmlns:th="https://www.thymeleaf.org">
-    <link th:href="@{/css/addSighting.css}" rel="stylesheet" />
-    <link th:href="@{/css/application.css}" rel="stylesheet" />
+    <head 
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="https://www.thymeleaf.org">
+        <link th:href="@{/css/addSighting.css}" rel="stylesheet" />
+        <link th:href="@{/css/application.css}" rel="stylesheet" />
     </head>
     <body>
         <div class="content-container">
             <h1>Add a whale sighting</h1>
-            <p>Please add the details of your sighting below.dfrefgerg</p>
-            <form id="add-sighting" action="" method="">
+            <p>Please add the details of your sighting below.</p>
+            <form id="add-sighting-form" action="#" method="POST">
                 <label for="date">
                     Date of Sighting
                 </label>
-                <input type="date" required/>
+                <input name="date" id="date" type="date" required />
                 <label for="latitude">
                     Latitude
                 </label>
-                <input type="number" required/>
+                <input name="latitude" id="latitude" type="number" required />
                 <label for="longitude">
                     Longitude
                 </label>
-                <input type="number" required/>
-                <input type="hidden"/>
-                <input type="submit"/>
+                <input name="longitude" id="longitude" type="number" required />
+                <input type="hidden" />
+                <input type="submit" />
             </form>
         </div>
     </body>
