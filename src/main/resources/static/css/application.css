@@ -79,9 +79,29 @@
 }
 
 .pending-sightings-admin-form {
-    border: 5px solid #42bfdd;
+    border: 5px solid var(--lightest-blue);
     border-radius: 25px;
     padding: 5rem;
+    margin: 1rem;
+}
+
+pending-sightings-table {
+
+
+}
+
+td {
+  text-align: center;
+}
+
+th {
+  height: 70px;
+}
+tr
+
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 /* radio button to validate sight */
@@ -93,6 +113,9 @@
 
 @media (max-width: 640px) {
     	.checkboxgroup input[type="radio"]{ height:15px; width:15px; margin-top: 2px;}
+    	.sightings-pending-container h1 {font-size: 1.5rem; font-weight:600;}
+    	.sightings-pending-container {font-size:1rem;}
+    	.pending-sightings-admin-form {padding:2rem;}
 }
 
 .checkboxgroup {
@@ -114,13 +137,13 @@ footer {
     position: fixed;
     bottom: 0;
     padding-top: 1rem;
+    overflow-x: auto;
 }
 
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: space-around;
 }
@@ -128,7 +151,7 @@ footer {
 .footer-container  > div {
   color: white;
   width: 30%;
-  height: 80%;
+  height: 60%;
   text-align: center;
   font-size: 0.9rem;
   font-weight: 500;

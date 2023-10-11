@@ -17,16 +17,6 @@
                 </div>
 
                 <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
-                    <label class="radio-inline">
-                        <input type="radio" value="approve" name="radioOption">Approve
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" value="reject" name="radioOption">Reject
-                    </label>
-                    <input type="submit" value="Submit">
-                </form>
-
-                <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
                         <div class="checkboxgroup">
                             <label for="radio_button_id1">Approve</label>
                             <input type="radio" name="radio" id="radio_button_id1" />
@@ -39,27 +29,27 @@
                 </form>
 
                 <form class="pending-sightings-admin-form" th:action="@{/admin}" method="post" th:object="${sight}">
-                    <table>
+                    <table class="pending-sightings-table">
                         <tr>
                             <th>Location</th>
                             <th>Whales</th>
                             <th>User</th>
-                            <th>Reject</th>
-                            <th>Approve</th>
+                            <th><label for="radio-button-reject">Reject</label></th>
+                            <th><label for="radio-button-approve">Approve</label></th>
                         </tr>
                         <tr>
-                            <td>First location</td>
+                            <td>location1</td>
                             <td>Willy</td>
                             <td>Member1</td>
-                            <td><input type="radio"/></td>
-                            <td><input type="radio"/></td>
+                            <td><input type="radio" name="radio1" value="reject" id="radio-button-reject" /></td>
+                            <td><input type="radio" name="radio1" value="approve" id="radio-button-approve"/></td>
                         </tr>
                         <tr>
                             <td>location2</td>
                             <td>Willy2</td>
                             <td>Member2</td>
-                            <td><input type="radio"/></td>
-                            <td><input type="radio"/></td>
+                            <td><input type="radio" name="radio2" value="reject" id="radio-button-reject2" /></td>
+                            <td><input type="radio" name="radio2" value="approve" id="radio-button-approve2"/></td>
                         </tr>
                     </table>
 
