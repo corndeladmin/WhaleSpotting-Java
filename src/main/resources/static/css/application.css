@@ -10,10 +10,9 @@
     margin: 0;
 }
 
-.content-container {
+ .content-container {
     display: flex;
     flex-direction: column;
-    background-color: rgba(27, 61, 175, 0.849);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

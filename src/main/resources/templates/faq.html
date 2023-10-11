@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="layout">
+
+<head>
+    <title>FAQ</title>
+    <link th:href="@{/css/faq.css}" rel="stylesheet" />
+</head>
+
+<body>
+    <section layout:fragment="content">
+
+        <div class="faq-header">Frequently Asked Questions</div>
+
+        <div class="faq-content">
+            <div class="faq-question">
+                <input id="q1" type="checkbox" class="panel">
+                <div class="plus">+</div>
+                <label for="q1" class="panel-title">How to add a whale sighting?</label>
+                <div class="panel-content">Simply log in into your account. If you don't have one you can register by
+                    clicking on register button. After you are logged in, click on add whale sighting which will take
+                    you to our whale sighting form after you complited al nessecary fields click submit button. After
+                    your sighting is approved by our administrator it will be added to our website.</div>
+            </div>
+
+            <div class="faq-question">
+                <input id="q2" type="checkbox" class="panel">
+                <div class="plus">+</div>
+                <label for="q2" class="panel-title">How to reset my password?</label>
+                <div class="panel-content">Follow <a href="www.google.com">this link</a></div>
+            </div>
+
+            <div class="faq-question">
+                <input id="q3" type="checkbox" class="panel">
+                <div class="plus">+</div>
+                <label for="q3" class="panel-title">How long does it usualy take for whale sighting to be
+                    approved?</label>
+                <div class="panel-content">Ussualy we approve sightings within 24 hour, but sometimes it might take us
+                    up to 48 hours to approve a sighting.
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
