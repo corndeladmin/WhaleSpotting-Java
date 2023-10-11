@@ -14,7 +14,10 @@ public class SightingService {
     private final SightingRepository sightingRepository;
 
     @Autowired
-    public SightingService(SightingRepository sightingRepository) {this.sightingRepository = sightingRepository;}
+    public SightingService(SightingRepository sightingRepository)
+    {
+        this.sightingRepository = sightingRepository;
+    }
 
     public List<Sighting> getAllSightings()
     {

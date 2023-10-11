@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html layout:decorate="layout">
-    <head lang="en"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    xmlns:th="https://www.thymeleaf.org">
-    <link th:href="@{/css/addSighting.css}" rel="stylesheet" />
-    <link th:href="@{/css/application.css}" rel="stylesheet" />
+    <head 
+        lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="https://www.thymeleaf.org">
+        <link th:href="@{/css/addSighting.css}" rel="stylesheet" />
+        <link th:href="@{/css/application.css}" rel="stylesheet" />
     </head>
     <body>
         <div layout:fragment="content">
             <h1 id="add-sighting-header">Add a whale sighting</h1>
             <p id="add-sighting-details">Please add the details of your sighting below.</p>
-            <form id="add-sighting" action="" method="POST">
+            <form id="add-sighting-form" action="#" method="POST">
                 <label for="date">
                     Date of Sighting
                 </label>
-                <input type="date" required/>
+                <input name="date" id="date" type="date" required />
                 <label for="latitude">
                     Latitude
                 </label>
-                <input type="number" required placeholder="e.g. 38.8951"/>
+                <input name="latitude" id="latitude" type="number" required placeholder="e.g. 38.8951" />
                 <label for="longitude">
                     Longitude
                 </label>
-                <input type="number" required placeholder="e.g. -77.0364"/>
-                <input class="button" type="submit" value="Add Sighting"/>
+                <input name="longitude" id="longitude" type="number" required  placeholder="e.g. -77.0364" />
+                <input class="button" type="submit" value="Add Sighting" />
             </form>
         </div>
     </body>
