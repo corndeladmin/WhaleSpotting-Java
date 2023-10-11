@@ -15,3 +15,8 @@
         .form-container {gap: 0.75rem;}
         .sightings-heading {font-size: 12px;}
 }
+
+.sightings-section{
+    display: flex;
+    justify-content: center;
+}

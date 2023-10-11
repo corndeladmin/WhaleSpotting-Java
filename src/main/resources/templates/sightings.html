@@ -7,23 +7,37 @@
     <link th:href="@{/css/api.css}" rel="stylesheet" />
 </head>
 <body class="page-container">
-<section layout:fragment="content">
+<section class="sightings-section" layout:fragment="content">
     <div class="sightings-heading">
         <h1>Sightings</h1>
     </div>
     <form class="sightings-form">
         <div class="input-container">
             Search: <input type="text">
-        </div>
-        <div class="sighting-sort-by">
-            <label for="sort-by">Sort By:</label>
-            <select name="dog-names" id="dog-names">
-                <option value="Most-Recent">Most Recent</option>
-                <option value="Oldest">Oldest</option>
-                <option value="Alphabetical">Alphabetical</option>
-            </select>
+
+            <div class="sighting-sort-by">
+                <label for="sort-by">Sort By:</label>
+                <select name="dog-names" id="dog-names">
+                    <option value="Most-Recent">Most Recent</option>
+                    <option value="Oldest">Oldest</option>
+                    <option value="Alphabetical">Alphabetical</option>
+                </select>
+            </div>
         </div>
     </form>
+    <div>
+        <h2>Results</h2>
+        <ul class="sightings result">
+            <li>
+                <button type="button">
+<!--                    <span class="badge">{{hero.id}}</span>-->
+<!--                    <span class="name">{{hero.name}}</span>-->
+                    <span>result column</span>
+                    <span>result column</span>
+                </button>
+            </li>
+        </ul>
+    </div>
 </section>
 </body>
 </html>
