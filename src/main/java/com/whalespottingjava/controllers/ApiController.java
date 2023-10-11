@@ -23,6 +23,6 @@ public class ApiController {
     @GetMapping("/api/get-all")
     @ResponseBody
     public List<Sighting> getAllSightings() {
-        return this.sightingService.getAllApprovedSightings();
+        return this.sightingService.getAllApprovedSightings(); //TODO: THIS EXPOSES A JSON HIJACKING VULN AS IT RETURNS A RAW JSON ARRAY
     }
 }
