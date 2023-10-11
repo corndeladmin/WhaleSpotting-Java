@@ -24,4 +24,6 @@ public class SightingService {
         return sightingRepository.findAll();
     }
 
+    public List<Sighting> getAllApprovedSightings() { return sightingRepository.findALlApprovedSightings(); }
+
 }
