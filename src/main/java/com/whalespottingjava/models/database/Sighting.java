@@ -5,6 +5,7 @@ import java.sql.Date;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "whale_sighting")
 public class Sighting {
     private static final String ID_SEQUENCE = "sighting_id_sequence";
 
@@ -28,5 +29,34 @@ public class Sighting {
         this.latitude = latitude;
         this.longitude = longitude;
         this.approved = false;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
     }
 }
