@@ -18,13 +18,13 @@ public class Sighting {
     private int member_id;
 
     private Date date;
-    private double latitude;
-    private double longitude;
+    private Double latitude;
+    private Double longitude;
     private Boolean approved;
 
     protected Sighting() {}
     
-    public Sighting(Date date, double latitude, double longitude) {
+    public Sighting(Date date, Double latitude, Double longitude) {
         this.date = date;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -36,19 +36,19 @@ public class Sighting {
         return id;
     }
 
-    public double getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
