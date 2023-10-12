@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head> 
+        <title>Add Sighting Confirmation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Sighting</h1>
+        <p th:text="'date: ' + ${sighting.date}" ></p>
+        <p th:text="'latitude: ' + ${sighting.latitude}" ></p>
+        <p th:text="'longitude: ' + ${sighting.longitude}" ></p>
+        <a href="/add-whale-sighting">Add another sighting</a>
+    </body>
+</html>

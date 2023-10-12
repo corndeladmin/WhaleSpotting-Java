@@ -11,20 +11,20 @@
         <div layout:fragment="content">
             <h1 id="add-sighting-header">Add a whale sighting</h1>
             <p id="add-sighting-details">Please add the details of your sighting below.</p>
-            <form id="add-sighting-form" action="#" method="POST">
+            <form id="add-sighting" action="#" method="POST" th:action="@{/add-whale-sighting}" th:object="${sighting}">
                 <label for="date">
                     Date of Sighting
                 </label>
-                <input name="date" id="date" type="date" required />
+                <input id="date" type="date" required th:field="*{date}"/>
                 <label for="latitude">
                     Latitude
                 </label>
-                <input name="latitude" id="latitude" type="number" required placeholder="e.g. 38.8951" />
+                <input id="latitude" type="number" required placeholder="e.g. 38.8951" th:field="*{latitude}" step=".000001" />
                 <label for="longitude">
                     Longitude
                 </label>
-                <input name="longitude" id="longitude" type="number" required  placeholder="e.g. -77.0364" />
-                <input class="button" type="submit" value="Add Sighting" />
+                <input id="longitude" type="number" required placeholder="e.g. -77.0364" th:field="*{longitude}"  step=".000001" />
+                <input class="button" type="submit" value="Add Sighting"/>
             </form>
         </div>
     </body>
