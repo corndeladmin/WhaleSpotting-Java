@@ -7,32 +7,76 @@
     <link th:href="@{/css/faq.css}" rel="stylesheet" />
 </head>
 
-<body>
-    <section layout:fragment="content">
+    <body>
+        <section layout:fragment="content">
 
-        <h1 class="faq-header">Frequently Asked Questions</h1>
+            <h1 class="faq-header">Frequently Asked Questions</h1>
 
-        <main>
-            <details>
-                <summary>How to add a whale sighting?</summary>
-                Simply log in into your account. If you don't have one you can register by
-                clicking on register button. After you are logged in, click on add whale sighting which will take
-                you to our whale sighting form after you complited al nessecary fields click submit button. After
-                your sighting is approved by our administrator it will be added to our website.
-            </details>
+            <main>
 
-            <details>
-                <summary>How to reset my password?</summary>
-                Follow <a href="#">this link</a>
-            </details>
+            
 
-            <details>
-                <summary>How long does it usualy take for whale sighting to be approved?</summary>
-                Ussualy we approve sightings within 24 hour, but sometimes it might take us
-                up to 48 hours to approve a sighting.
-            </details>
-        </main>
-    </section>
-</body>
+                <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <symbol viewBox="0 0 24 24" id="expand-more">
+                            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                        </symbol>
+                        <symbol viewBox="0 0 24 24" id="close">
+                            <path
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                        </symbol>
+                    </svg>
+                </div>
+
+                <details open>
+                    <summary>
+                        How to add a whale sighting?
+                        <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+                        </svg>
+                        <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+                        </svg>
+                    </summary>
+                    <p>Simply log in into your account. If you don't have one you can register by
+                        clicking on register button. After you are logged in, click on add whale sighting which will take
+                        you to our whale sighting form after you complited al nessecary fields click submit button. After
+                        your sighting is approved by our administrator it will be added to our website.</p>
+                </details>
+
+                <details>
+
+                    <summary>
+                        How to reset my password?
+                        <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+                        </svg>
+                        <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+                        </svg>
+                    </summary>
+                    <p>Follow <a href="#">this link</a></p>
+                </details>
+
+                <details>
+                    <summary>
+                        How long does it usualy take for whale sighting to be approved?
+                        <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
+                        </svg>
+                        <svg class="control-icon control-icon-close" width="24" height="24" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" />
+                        </svg>
+                    </summary>
+                    <p>
+                        Ussualy we approve sightings within 24 hour, but sometimes it might take us
+                        up to 48 hours to approve a sighting.</p>
+                </details>
+            
+            </main>
+        </section>
+    </body>
 
 </html>
