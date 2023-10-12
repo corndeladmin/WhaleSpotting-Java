@@ -1,6 +1,8 @@
 package com.whalespottingjava.models.database;
 
 import java.sql.Date;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 
 import jakarta.persistence.*;
 
@@ -34,6 +36,16 @@ public class Sighting {
 
     public Long getId() {
         return id;
+    }
+
+    public long getMemberId() {
+        return member_id;
+    }
+
+    public String getDate() {
+        Format formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String result = formatter.format(date);
+        return result;
     }
 
     public double getLatitude() {
