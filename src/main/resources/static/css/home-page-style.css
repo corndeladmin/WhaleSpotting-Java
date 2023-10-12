@@ -1,5 +1,5 @@
 body {
-    background-color: #42BFDD;
+    background-color: var(--lightest-blue);
 }
 
 p {
@@ -11,7 +11,7 @@ h2 {
 }
 
 .button {
-    background-color: #1D77C3;
+    background-color: var(--daeker-blue);
     border: none;
     color: white;
     padding: 15px 50px;
