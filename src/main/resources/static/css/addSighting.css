@@ -16,6 +16,10 @@ body {
     margin: 0 auto;
 }
 
+.submission-labels {
+    font-weight: bold;
+}
+
 form > input {
     margin: 10px 0;
     padding: 7px 5px;
