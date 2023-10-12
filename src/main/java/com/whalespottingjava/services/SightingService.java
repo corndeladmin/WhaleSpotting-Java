@@ -25,8 +25,6 @@ public class SightingService {
     }
 
     public List<Sighting> getAllApprovedSightings() {
-        return this.sightingRepository.findAll().stream()
-                .filter(Sighting::getApproved)
-                .toList();
+        return this.sightingRepository.findByApprovedTrue();
     }
 }
