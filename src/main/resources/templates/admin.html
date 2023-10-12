@@ -4,6 +4,7 @@
       xmlns:th="https://www.thymeleaf.org"
       layout:decorate="layout">
     <head>
+        <link th:href="@{/css/adminPage.css}" rel="stylesheet" />
         <title>Admin</title>
     </head>
     <body>
@@ -15,6 +16,7 @@
                 <div th:if="${param.error}">
                     There was an error loading the pending sightings.
                 </div>
+                <!-- Place a div if no sight is pending to indicate no work to do. Use thymeleaf to check no sight pending -->
 
                 <form  th:action="@{/admin}" method="post" th:object="${sight}">
 
