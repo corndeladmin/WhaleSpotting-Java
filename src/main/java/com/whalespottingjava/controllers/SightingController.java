@@ -17,8 +17,8 @@ public class SightingController {
     public String getAddSightingPage() {
         return "add_sighting";
     }
-    @GetMapping("/sightings")
-    public String getAllSightings(Model model) {
+    @GetMapping("/Sightings")
+    public String getAllSighting(Model model) {
         model.addAttribute("sightings", sightingService.getAllSightings());
         return "sighting_test";
     }
