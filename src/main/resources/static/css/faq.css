@@ -47,7 +47,6 @@
   
   summary:focus {
     outline: none;
-    
   }
   
   summary:focus::after {
@@ -58,7 +57,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    
   }
   
   summary::-webkit-details-marker {

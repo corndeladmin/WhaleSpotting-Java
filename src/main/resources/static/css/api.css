@@ -11,7 +11,7 @@
     margin: 0px;
     height: 100vh;
     flex-direction: row;
-} 
+}
 
 #endpoint-list-container {
     display: flex;
