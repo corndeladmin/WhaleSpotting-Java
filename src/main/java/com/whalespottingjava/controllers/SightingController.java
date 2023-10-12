@@ -24,7 +24,7 @@ public class SightingController {
     }
     @GetMapping("/sightings/approved")
     public String getAllApprovedSightings(Model model) {
-        model.addAttribute("approvedSightings", sightingService.getAllApprovedSightings());
+        model.addAttribute("approvedSightings", sightingService.getApprovedSightings());
         return "sightings_approved";
     }
 }
