@@ -7,7 +7,7 @@
 
 @media (max-width: 640px) {
     .register-heading { font-size: 16px; }
-    .register-textfields { height: 1rem; width: 180px; }
+    .register-textfields { height: 1rem; width: 200px; }
     .warning-state { font-size: 8px; }
     .register-button { font-size: 16px; }
 }
