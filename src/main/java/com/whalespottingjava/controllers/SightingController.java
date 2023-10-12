@@ -22,11 +22,11 @@ public class SightingController {
         return "add_sighting";
     }
 
-//    @GetMapping("/Sightings")
-//    public String getAllSighting(Model model) {
-//        model.addAttribute("sightings", sightingService.getAllSightings());
-//        return "sighting_test";
-//    }
+   @GetMapping("/sightings/test")
+   public String getAllSighting(Model model) {
+       model.addAttribute("sightings", sightingService.getAllSightings());
+       return "sightings_map";
+   }
 //
 //    @GetMapping("/sightings/approved")
 //    public String getAllApprovedSightings(Model model) {
