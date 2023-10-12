@@ -76,13 +76,30 @@
 }
 
 @media screen and (max-width: 768px) {
-    .checkboxgroup input[type="radio"]{ height:15px; width:15px; margin-top: 10px;}
-    .sightings-pending-container h1 {font-size: 1.5rem; font-weight:600;}
-    .sightings-pending-container {font-size:1rem;}
-    .sightings-pending-admin-form {padding:2rem;}
-    .sighting {padding-right: 0px;}
-    .button-submit-sights input[type="submit"] {font-size: 1rem; padding: 1rem;}
-    .flex-container-for-submit {justify-content: center;}
+    .checkboxgroup input[type="radio"] {
+        height:15px; 
+        width:15px; 
+        margin-top: 10px;
+    }
+    .sightings-pending-container h1 {
+        font-size: 1.5rem; 
+        font-weight:600;
+    }
+    .sightings-pending-container {
+        font-size:1rem;
+    }
+    .sightings-pending-admin-form {
+        padding:2rem;
+    }
+    .sighting {
+        padding-right: 0px;
+    }
+    .button-submit-sights input[type="submit"] {
+        font-size: 1rem; padding: 1rem;
+    }
+    .flex-container-for-submit {
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 360px) {
