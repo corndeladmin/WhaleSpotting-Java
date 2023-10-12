@@ -40,4 +40,10 @@ public class SightingController {
     public String getApprovedSightings() {
         return "approved_sightings";
     }
+  
+//    @GetMapping("/sightings")
+//    public String getAllSightings(Model model) {
+//        model.addAttribute("sightings", sightingService.getAllSightings());
+//        return "sighting_test";
+//    }
 }
