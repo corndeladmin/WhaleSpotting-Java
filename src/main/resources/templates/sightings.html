@@ -4,23 +4,18 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <title>Sightings</title>
-    <link th:href="@{/css/api.css}" rel="stylesheet" />
+    <link th:href="@{/css/sightings.css}" rel="stylesheet" />
 </head>
 <body class="page-container">
 <section class="sightings-section" layout:fragment="content">
     <div class="sightings-heading">
         <h1>Sightings</h1>
     </div>
-    <div>
-        <h2>Results</h2>
-        <ul class="sightings result">
+    <div class="sightings-results-section">
+        <ul class="sightings-list">
             <li>
-                <button type="button">
-<!--                    <span class="badge">{{hero.id}}</span>-->
-<!--                    <span class="name">{{hero.name}}</span>-->
-                    <span>result column</span>
-                    <span>result column</span>
-                </button>
+                <span class="result-item">Location</span>
+                <span class="result-item">Date</span>
             </li>
         </ul>
     </div>
