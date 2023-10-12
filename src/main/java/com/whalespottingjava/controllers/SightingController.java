@@ -1,9 +1,14 @@
 package com.whalespottingjava.controllers;
 
+import com.whalespottingjava.models.MemberDetails;
 import com.whalespottingjava.models.database.Sighting;
 import com.whalespottingjava.repositories.SightingRepository;
 import com.whalespottingjava.services.SightingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +36,10 @@ public class SightingController {
     @PostMapping("/add-whale-sighting")
     public String submitSighting(@ModelAttribute Sighting sighting, Model model) {
         model.addAttribute("sighting", sighting);
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        Authentication authentication = securityContext.getAuthentication();
+        MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
+        sighting.setMemberId(memberDetails.getMember().getId());
         sightingService.addSighting(sighting);
         return "add_sighting_confirmation";
     }

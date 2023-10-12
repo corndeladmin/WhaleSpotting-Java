@@ -15,7 +15,7 @@ public class Sighting {
     private Long id;
 
     @Column(nullable = false)
-    private int member_id;
+    private Long member_id;
 
     private Date date;
     private double latitude;
@@ -31,6 +31,13 @@ public class Sighting {
         this.approved = false;
     }
 
+    public Long getMemberId() {
+        return member_id;
+    }
+
+    public void setMemberId(Long member_id) {
+        this.member_id = member_id;
+    }
 
     public Long getId() {
         return id;
