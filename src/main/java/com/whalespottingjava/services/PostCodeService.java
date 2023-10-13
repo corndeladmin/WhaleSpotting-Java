@@ -52,6 +52,7 @@ public class PostCodeService {
         JSONObject result = handlePostCodeApiResponse(postCode);
         return result.getBigDecimal("latitude").doubleValue();
     }
+    
     public double getLongitude(String postCode) {
         JSONObject result = handlePostCodeApiResponse(postCode);
         return result.getBigDecimal("longitude").doubleValue();
