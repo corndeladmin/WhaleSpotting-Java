@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public class PostCodeService {
     private String URL_POST_CODE_API = "https://api.postcodes.io/postcodes";
     private final String resultKeyWord = "result";
-    private String postCodeKeyWord = "postcode";
+    private final String postCodeKeyWord = "postcode";
     private String httpRequestPostCodeApi(String url) throws URISyntaxException {
         HttpRequest request = HttpRequest.newBuilder().uri(new URI(url))
                 .version(HttpClient.Version.HTTP_2).GET().build();
