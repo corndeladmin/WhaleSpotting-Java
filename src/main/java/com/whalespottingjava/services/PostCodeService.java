@@ -82,6 +82,7 @@ public class PostCodeService {
         String latitudeInput = "lat=";
         return urlPostCodeApi +  "?" + longitudeInput + longitude + "&" + latitudeInput + latitude;
     }
+    
     private String getUrlForLonLatRequest(String postCode){
         postCode =  postCode.replaceAll("\\s", "");
         return urlPostCodeApi +  "/" + postCode;
