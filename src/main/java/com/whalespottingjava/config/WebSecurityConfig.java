@@ -36,7 +36,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/home", "/register", "/error", "/faq").permitAll()
+                        .requestMatchers("/", "/home", "/register", "/error", "/api", "/api-swagger", "/api/get-all", "/faq").permitAll()
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         .anyRequest().authenticated()
                 )
@@ -44,7 +44,8 @@ public class WebSecurityConfig {
                         .loginPage("/login")
                         .permitAll()
                 )
-                .logout(LogoutConfigurer::permitAll);
+                .logout(LogoutConfigurer::permitAll)
+                .csrf().disable();
 
         return http.build();
     }
