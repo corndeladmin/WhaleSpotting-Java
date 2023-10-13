@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html layout:decorate="layout"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Sightings</title>
     <link th:href="@{/css/sightings.css}" rel="stylesheet" />
@@ -14,8 +14,11 @@
     <div class="sightings-results-section">
         <ul class="sightings-list">
             <li>
-                <span class="result-item">Location</span>
-                <span class="result-item">Date</span>
+                <tr th:each="sighting: ${sightings}">
+                    <td th:text="${sighting.date}" />
+                    <td th:text="${sighting.latitude}" />
+                    <td th:text="${sighting.longitude}" />
+                </tr>
             </li>
         </ul>
     </div>

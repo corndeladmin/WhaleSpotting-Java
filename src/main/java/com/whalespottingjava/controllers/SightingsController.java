@@ -4,6 +4,7 @@ import com.whalespottingjava.services.SightingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 
 @Controller
 public class SightingsController {
@@ -18,10 +19,10 @@ public class SightingsController {
         return "add_sighting";
     }
 
-    @GetMapping("/Sightings")
+    @GetMapping("/sightings")
     public String getAllSighting(Model model) {
         model.addAttribute("sightings", sightingService.getAllSightings());
-        return "sighting_test";
+        return "sightings";
     }
 
     //for admin use
