@@ -33,7 +33,7 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
 
     // https://mvnrepository.com/artifact/org.json/json
-    implementation("org.json:json:20230618")
+    implementation 'org.json:json:20230618'
 }
 
 tasks.named('test') {
