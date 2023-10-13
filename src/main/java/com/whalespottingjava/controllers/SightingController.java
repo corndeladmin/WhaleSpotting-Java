@@ -14,12 +14,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class SightingController {
     private final SightingService sightingService;
+
     @Autowired
     public SightingController(SightingService sightingService) {
         this.sightingService = sightingService;
@@ -48,5 +50,10 @@ public class SightingController {
     public String getAllSighting(Model model) {
         model.addAttribute("sightings", sightingService.getAllSightings());
         return "sighting_test";
+    }
+
+    @GetMapping("/sightings/approved")
+    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
+    public void getAllApprovedSightings() {
     }
 }
