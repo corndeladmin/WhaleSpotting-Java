@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 public class PostCodeService {
     private String URL_POST_CODE_API = "https://api.postcodes.io/postcodes";
-    private String resultKeyWord = "result";
+    private final String resultKeyWord = "result";
     private String postCodeKeyWord = "postcode";
     private String httpRequestPostCodeApi(String url) throws URISyntaxException {
         HttpRequest request = HttpRequest.newBuilder().uri(new URI(url))
