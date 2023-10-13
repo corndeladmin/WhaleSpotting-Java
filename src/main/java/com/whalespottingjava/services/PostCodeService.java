@@ -16,6 +16,36 @@ public class PostCodeService {
     private final String RESULT_KEY_WORD = "result";
     private final String POST_CODE_KEY_WORD = "postcode";
 
+    public double getLatitude(String postCode) {
+        JSONObject result = handlePostCodeApiResponse(postCode);
+
+        return result.getBigDecimal("latitude").doubleValue();
+    }
+
+    public double getLongitude(String postCode) {
+        JSONObject result = handlePostCodeApiResponse(postCode);
+
+        return result.getBigDecimal("longitude").doubleValue();
+    }
+
+    public String getPostCode(double longitude, double latitude) {
+        String url = getUrlForPostCodeRequest(longitude, latitude);
+        String response = null;
+        JSONObject result;
+        String postcode;
+
+        try {
+            response = httpRequestPostCodeApi(url);
+            JSONObject json = new JSONObject(response);
+            result = json.getJSONArray(RESULT_KEY_WORD).getJSONObject(0);
+            postcode = result.getString(POST_CODE_KEY_WORD);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+
+        return postcode;
+    }
+    
     private String httpRequestPostCodeApi(String url) throws URISyntaxException {
         String responseBody;
         HttpRequest request = HttpRequest.newBuilder()
@@ -51,37 +81,7 @@ public class PostCodeService {
         
         return result;
     }
-    
-    public double getLatitude(String postCode) {
-        JSONObject result = handlePostCodeApiResponse(postCode);
-        
-        return result.getBigDecimal("latitude").doubleValue();
-    }
-    
-    public double getLongitude(String postCode) {
-        JSONObject result = handlePostCodeApiResponse(postCode);
-        
-        return result.getBigDecimal("longitude").doubleValue();
-    }
-    
-    public String getPostCode(double longitude, double latitude) {
-        String url = getUrlForPostCodeRequest(longitude, latitude);
-        String response = null;
-        JSONObject result;
-        String postcode;
-        
-        try {
-            response = httpRequestPostCodeApi(url);
-            JSONObject json = new JSONObject(response);
-            result = json.getJSONArray(RESULT_KEY_WORD).getJSONObject(0);
-            postcode = result.getString(POST_CODE_KEY_WORD);
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-        
-        return postcode;
-    }
-    
+
     private String getUrlForPostCodeRequest(double longitude, double latitude) {
         String longitudeInput = "lon=";
         String latitudeInput = "lat=";
