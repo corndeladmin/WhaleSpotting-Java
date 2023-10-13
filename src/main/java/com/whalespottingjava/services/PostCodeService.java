@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -45,6 +44,7 @@ public class PostCodeService {
     private String requestHttpPostCodeApi(String url) {
         String responseBody;
         HttpRequest request;
+        HttpResponse<String> response;
 
         try {
            request = HttpRequest.newBuilder()
@@ -52,9 +52,11 @@ public class PostCodeService {
                     .version(HttpClient.Version.HTTP_2)
                     .GET()
                     .build();
-            HttpResponse<String> response = HttpClient.newBuilder()
+
+            response = HttpClient.newBuilder()
                     .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
+
             responseBody = response.body();
         } catch (IOException | InterruptedException | URISyntaxException ex) {
             throw new RuntimeException(ex);
