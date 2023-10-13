@@ -4,12 +4,71 @@
       xmlns:th="https://www.thymeleaf.org"
       layout:decorate="layout">
     <head>
+        <link th:href="@{/css/adminPage.css}" rel="stylesheet" />
         <title>Admin</title>
     </head>
     <body>
         <section layout:fragment="content">
-            <h1>Admins</h1>
-            <p>Only members with the Admin role should be able to get here!</p>
+            <div class="sightings-pending-container">
+
+                <h1>Pending Sightings</h1>
+                <p>Only members with the Admin role should be able to get here!</p>
+                <div th:if="${param.error}">
+                    There was an error loading the pending sightings.
+                </div>
+                <!-- Place a div if no sight is pending to indicate no work to do. Use thymeleaf to check no sight pending -->
+
+                <form th:action="@{/admin}" method="post" th:object="${sightings}">
+                    <!-- loop throught sighting pending to be approved-->
+                    <div class="sightings-pending-admin-form">
+
+                        <div class="sighting">
+                            <span>latitute1</span>   <!-- use thymeleaf to  get latitude from a sighting-->
+                            <span>longitude1</span>
+                            <span>Whales1</span>
+                            <span>User1</span>
+                        </div>
+
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id2">Reject</label>
+                            <input type="radio" name="radio1" value="reject" id="radio-button-id2" />
+                        </div>
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id1">Approve</label>
+                            <input type="radio" name="radio1" value="approve" id="radio-button-id1" />
+                        </div>
+
+                    </div>
+
+                    <div class="sightings-pending-admin-form">
+
+                        <div class="sighting">
+                            <span>latitute2</span>
+                            <span>longitude2</span>
+                            <span>Whales2</span>
+                            <span>User2</span>
+                        </div>
+
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id3">Reject</label>
+                            <input type="radio" name="radio2" value="reject" id="radio-button-id3" />
+                        </div>
+                        <div class="checkboxgroup">
+                            <label for="radio-button-id4">Approve</label>
+                            <input type="radio" name="radio12" value="approve" id="radio-button-id4" />   <!-- button name will be changed to sighting unique id-->
+                        </div>
+
+                    </div>
+
+                    <div class="flex-container-for-submit">
+                        <div class="button-submit-sights" >
+                            <input type="submit" value="Submit">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
         </section>
     </body>
 </html>

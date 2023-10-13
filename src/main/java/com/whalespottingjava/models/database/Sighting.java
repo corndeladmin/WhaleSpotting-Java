@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "whale_sighting")
 public class Sighting {
-    private static final String ID_SEQUENCE = "sighting_id_sequence";
+    private static final String ID_SEQUENCE = "whale_sighting_id_sequence";
 
     @Id
     @SequenceGenerator(name = ID_SEQUENCE, sequenceName = ID_SEQUENCE, allocationSize = 1)
@@ -15,15 +15,15 @@ public class Sighting {
     private Long id;
 
     @Column(nullable = false)
-    private int member_id;
+    private Long member_id;
 
     private Date date;
     private double latitude;
     private double longitude;
     private Boolean approved;
 
-    protected Sighting() {}
-    
+    public Sighting() {}
+
     public Sighting(Date date, double latitude, double longitude) {
         this.date = date;
         this.latitude = latitude;
@@ -31,9 +31,24 @@ public class Sighting {
         this.approved = false;
     }
 
+    public Long getMemberId() {
+        return member_id;
+    }
+
+    public void setMemberId(Long member_id) {
+        this.member_id = member_id;
+    }
 
     public Long getId() {
         return id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public double getLatitude() {
