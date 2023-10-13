@@ -28,6 +28,7 @@ public class PostCodeService {
         } catch (InterruptedException ex) {
             throw new RuntimeException(ex);
         }
+
         return responseBody;
     }
     private JSONObject handlePostCodeApiResponse(String postCode){
