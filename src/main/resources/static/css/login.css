@@ -14,6 +14,7 @@
     .invalid-state { font-size: 10px; }
     .warning-state { font-size: 10px; }
     .login-button { font-size: 14px; }
+    .waves > svg { height: 150px; }
 }
 
 .login-container {
@@ -56,10 +57,11 @@
 }
 
 .waves {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     z-index: -1;
+    transform: scaleY(1.1);
 }
 
 .invalid-state {
