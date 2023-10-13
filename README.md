@@ -58,3 +58,9 @@ role: ADMIN
 ```
 
 You should be able to create more users by running the app and visiting `http://localhost:8080/register` or adding them straight to your database.
+
+***
+
+## Style Guide
+
+https://www.oracle.com/technetwork/java/codeconventions-150003.pdf
