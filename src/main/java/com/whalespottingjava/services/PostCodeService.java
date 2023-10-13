@@ -32,6 +32,7 @@ public class PostCodeService {
 
         return responseBody;
     }
+
     private JSONObject handlePostCodeApiResponse(String postCode){
         String url = getUrlForLonLatRequest(postCode);
         String response;
