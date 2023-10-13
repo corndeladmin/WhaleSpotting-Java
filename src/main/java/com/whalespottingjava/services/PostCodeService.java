@@ -58,6 +58,7 @@ public class PostCodeService {
         
         return result.getBigDecimal("longitude").doubleValue();
     }
+    
     public String getPostCode(double longitude, double latitude) {
         String url = getUrlForPostCodeRequest(longitude, latitude);
         String response = null;
