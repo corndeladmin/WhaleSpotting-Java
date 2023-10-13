@@ -65,4 +65,11 @@ public class SightingController {
   @GetMapping("/sightings/approved")
   @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
   public void getAllApprovedSightings() {}
+
+  @GetMapping("/sightings/pending")
+  @ResponseStatus(HttpStatus.OK)
+  public String getPendingSightings(Model model) {
+    model.addAttribute("sightings", sightingService.getPendingSightings());
+    return "sighting_test";
+  }
 }
