@@ -20,6 +20,7 @@ public class PostCodeService {
         HttpRequest request = HttpRequest.newBuilder().uri(new URI(url))
                 .version(HttpClient.Version.HTTP_2).GET().build();
         String responseBody;
+
         try {
             HttpResponse<String> response = HttpClient.newBuilder().build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
