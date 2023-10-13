@@ -33,10 +33,6 @@ public class Sighting {
         this.approved = false;
     }
 
-    public Long getMemberId() {
-        return member_id;
-    }
-
     public void setMemberId(Long member_id) {
         this.member_id = member_id;
     }
