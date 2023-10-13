@@ -31,4 +31,8 @@ public class SightingService {
     public List<Sighting> getAllApprovedSightings() { // TODO: 12/10/2023 Returns raw JSON array, should be wrapped in object
         return this.sightingRepository.findByApprovedTrue();
     }
+
+    public List<Sighting> getAllPendingSightings() {
+        return this.sightingRepository.findByApprovedFalse();
+    }
 }

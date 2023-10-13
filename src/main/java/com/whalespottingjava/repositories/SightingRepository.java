@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface SightingRepository extends JpaRepository<Sighting, Long> {
     public List<Sighting> findByApprovedTrue();
+    public List<Sighting> findByApprovedFalse();
 }
