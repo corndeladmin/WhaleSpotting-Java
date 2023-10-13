@@ -12,9 +12,9 @@ import java.net.http.HttpResponse;
 import org.json.JSONObject;
 
 public class PostCodeService {
-    private String URL_POST_CODE_API = "https://api.postcodes.io/postcodes";
-    private final String resultKeyWord = "result";
-    private final String postCodeKeyWord = "postcode";
+    private final String URL_POST_CODE_API = "https://api.postcodes.io/postcodes";
+    private final String RESULT_KEY_WORD = "result";
+    private final String POST_CODE_KEY_WORD = "postcode";
 
     private String httpRequestPostCodeApi(String url) throws URISyntaxException {
         String responseBody;
@@ -25,7 +25,8 @@ public class PostCodeService {
                 .build();
 
         try {
-            HttpResponse<String> response = HttpClient.newBuilder().build()
+            HttpResponse<String> response = HttpClient.newBuilder()
+                    .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
             responseBody = response.body();
         } catch (IOException | InterruptedException ex) {
@@ -43,7 +44,7 @@ public class PostCodeService {
         try {
             response = httpRequestPostCodeApi(url);
             JSONObject json = new JSONObject(response);
-            result = json.getJSONObject(resultKeyWord);
+            result = json.getJSONObject(RESULT_KEY_WORD );
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
@@ -71,8 +72,8 @@ public class PostCodeService {
         try {
             response = httpRequestPostCodeApi(url);
             JSONObject json = new JSONObject(response);
-            result = json.getJSONArray(resultKeyWord).getJSONObject(0);
-            postcode = result.getString(postCodeKeyWord );
+            result = json.getJSONArray(RESULT_KEY_WORD).getJSONObject(0);
+            postcode = result.getString(POST_CODE_KEY_WORD);
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
