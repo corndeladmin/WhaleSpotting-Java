@@ -34,32 +34,29 @@ public class PostCodeService {
         String postcode;
         JSONObject result;
 
-        try {
-            response = requestHttpPostCodeApi(url);
-            JSONObject json = new JSONObject(response);
-            result = json.getJSONArray(RESULT_KEY_WORD).getJSONObject(0);
-            postcode = result.getString(POST_CODE_KEY_WORD);
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
+        response = requestHttpPostCodeApi(url);
+        JSONObject json = new JSONObject(response);
+        result = json.getJSONArray(RESULT_KEY_WORD).getJSONObject(0);
+        postcode = result.getString(POST_CODE_KEY_WORD);
 
         return postcode;
     }
 
-    private String requestHttpPostCodeApi(String url) throws URISyntaxException {
+    private String requestHttpPostCodeApi(String url) {
         String responseBody;
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(url))
-                .version(HttpClient.Version.HTTP_2)
-                .GET()
-                .build();
+        HttpRequest request;
 
         try {
+           request = HttpRequest.newBuilder()
+                    .uri(new URI(url))
+                    .version(HttpClient.Version.HTTP_2)
+                    .GET()
+                    .build();
             HttpResponse<String> response = HttpClient.newBuilder()
                     .build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
             responseBody = response.body();
-        } catch (IOException | InterruptedException ex) {
+        } catch (IOException | InterruptedException | URISyntaxException ex) {
             throw new RuntimeException(ex);
         } 
 
@@ -70,15 +67,11 @@ public class PostCodeService {
         String url = getUrlForLonLatRequest(postCode);
         String response;
         JSONObject result;
-        
-        try {
-            response = requestHttpPostCodeApi(url);
-            JSONObject json = new JSONObject(response);
-            result = json.getJSONObject(RESULT_KEY_WORD );
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-        
+
+        response = requestHttpPostCodeApi(url);
+        JSONObject json = new JSONObject(response);
+        result = json.getJSONObject(RESULT_KEY_WORD );
+
         return result;
     }
 

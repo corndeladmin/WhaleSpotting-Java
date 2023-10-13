@@ -24,18 +24,17 @@ public class SightingController {
         model.addAttribute("sightings", sightingService.getAllSightings());
         return "sighting_test";
     }
-<<<<<<< HEAD
 
     //for admin use
     @GetMapping("/PendingSightings")
     public String getPendingSightings() {
         return "pending_sightings";
-=======
+    }
+
     @GetMapping("/sightings/approved")
     public String getAllApprovedSightings(Model model) {
         model.addAttribute("approvedSightings", sightingService.getAllApprovedSightings());
         return "sightings_approved";
->>>>>>> 4b23ab9 (Code Cleanup)
     }
 
     //For user use
