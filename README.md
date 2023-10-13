@@ -63,4 +63,4 @@ You should be able to create more users by running the app and visiting `http://
 
 ## Style Guide
 
-https://www.oracle.com/technetwork/java/codeconventions-150003.pdf
+https://google.github.io/styleguide/javaguide.html
