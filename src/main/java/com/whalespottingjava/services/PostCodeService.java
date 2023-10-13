@@ -17,9 +17,12 @@ public class PostCodeService {
     private final String postCodeKeyWord = "postcode";
 
     private String httpRequestPostCodeApi(String url) throws URISyntaxException {
-        HttpRequest request = HttpRequest.newBuilder().uri(new URI(url))
-                .version(HttpClient.Version.HTTP_2).GET().build();
         String responseBody;
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(url))
+                .version(HttpClient.Version.HTTP_2)
+                .GET()
+                .build();
 
         try {
             HttpResponse<String> response = HttpClient.newBuilder().build()
