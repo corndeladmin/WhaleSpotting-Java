@@ -47,6 +47,8 @@ application {
 }
 
 spotless {
+  ratchetFrom 'origin/main'
+
   format 'misc', {
     target '**/*.gradle', '**/*.md', '**/*.yml', '**/*.yaml', '**/*.properties'
     trimTrailingWhitespace()
@@ -61,5 +63,17 @@ spotless {
     indentWithSpaces()
     endWithNewline()
     removeUnusedImports()
+  }
+
+  format 'css', {
+    target 'src/main/resources/**/*.css'
+
+    prettier()
+  }
+
+  format 'html', {
+    target 'src/main/resources/**/*.html'
+
+    prettier()
   }
 }
