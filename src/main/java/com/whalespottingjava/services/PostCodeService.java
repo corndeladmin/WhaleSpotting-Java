@@ -30,12 +30,12 @@ public class PostCodeService {
 
     public String getPostCode(double longitude, double latitude) {
         String url = getUrlForPostCodeRequest(longitude, latitude);
-        String response = null;
-        JSONObject result;
+        String response;
         String postcode;
+        JSONObject result;
 
         try {
-            response = httpRequestPostCodeApi(url);
+            response = requestHttpPostCodeApi(url);
             JSONObject json = new JSONObject(response);
             result = json.getJSONArray(RESULT_KEY_WORD).getJSONObject(0);
             postcode = result.getString(POST_CODE_KEY_WORD);
@@ -45,8 +45,8 @@ public class PostCodeService {
 
         return postcode;
     }
-    
-    private String httpRequestPostCodeApi(String url) throws URISyntaxException {
+
+    private String requestHttpPostCodeApi(String url) throws URISyntaxException {
         String responseBody;
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(url))
@@ -72,7 +72,7 @@ public class PostCodeService {
         JSONObject result;
         
         try {
-            response = httpRequestPostCodeApi(url);
+            response = requestHttpPostCodeApi(url);
             JSONObject json = new JSONObject(response);
             result = json.getJSONObject(RESULT_KEY_WORD );
         } catch (URISyntaxException e) {
