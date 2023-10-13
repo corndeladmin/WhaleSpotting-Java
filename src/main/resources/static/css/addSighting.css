@@ -26,7 +26,6 @@ form > input {
     border: none;
     border-radius: 5px;
     max-width: 175px;
-    
 }
 
 #add-sighting-header, #add-sighting-details {
@@ -45,5 +44,4 @@ form > input {
         margin: 0;
     }
 }
-
 
