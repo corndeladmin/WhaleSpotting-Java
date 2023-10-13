@@ -23,4 +23,10 @@ public class SightingService {
     public List<Sighting> getAllApprovedSightings() { // TODO: 12/10/2023 Returns raw JSON array, should be wrapped in object
         return this.sightingRepository.findByApprovedTrue();
     }
+
+    public void addBulkSightings(List<Sighting> sightings) {
+        // Validate sightings (Use jakarta?)
+        // Add to DB (look into bulk adding)
+        this.sightingRepository.saveAll(sightings);
+    }
 }
