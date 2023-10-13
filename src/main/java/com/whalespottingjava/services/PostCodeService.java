@@ -25,11 +25,9 @@ public class PostCodeService {
             HttpResponse<String> response = HttpClient.newBuilder().build()
                     .send(request, HttpResponse.BodyHandlers.ofString());
             responseBody = response.body();
-        } catch (IOException ex) {
+        } catch (IOException | InterruptedException ex) {
             throw new RuntimeException(ex);
-        } catch (InterruptedException ex) {
-            throw new RuntimeException(ex);
-        }
+        } 
 
         return responseBody;
     }
