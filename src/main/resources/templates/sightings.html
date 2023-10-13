@@ -13,12 +13,14 @@
     </div>
     <div class="sightings-results-section">
         <ul class="sightings-list">
-            <li>
-                <tr th:each="sighting: ${sightings}">
-                    <td th:text="${sighting.date}" />
-                    <td th:text="${sighting.latitude}" />
-                    <td th:text="${sighting.longitude}" />
-                </tr>
+            <li class="results-list">
+                <div class="sightings-list" th:each="sighting: ${sightings}">
+                    <div class="result-item">
+                        <br>Date: <td th:text="${sighting.date}" /></br>
+                        <br>Latitude: <td th:text="${sighting.latitude}" /></br>
+                        <br>Longitude:  <td th:text="${sighting.longitude}" /></br>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
