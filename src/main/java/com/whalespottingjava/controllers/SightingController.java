@@ -70,6 +70,7 @@ public class SightingController {
   @ResponseStatus(HttpStatus.OK)
   public String getPendingSightings(Model model) {
     model.addAttribute("sightings", sightingService.getAllPendingSightings());
+    
     return "sightings_map";
   }
 }
