@@ -31,6 +31,19 @@ public class SightingController {
         return "add_sighting";
     }
 
+
+   @GetMapping("/sightings/test")
+   public String getAllSighting(Model model) {
+       model.addAttribute("sightings", sightingService.getAllSightings());
+       return "sightings_map";
+   }
+//
+//    @GetMapping("/sightings/approved")
+//    public String getAllApprovedSightings(Model model) {
+//        model.addAttribute("approvedSightings", this.sightingService.getAllApprovedSightings());
+//        return "sightings_approved";
+//    }
+
     //submits the add-sighting form data
     @PostMapping("/add-whale-sighting")
     public String submitSighting(@ModelAttribute Sighting sighting, Model model) {
@@ -42,6 +55,7 @@ public class SightingController {
         sightingService.addSighting(sighting);
         return "add_sighting_confirmation";
     }
+
 
     @GetMapping("/sightings")
     public String getAllSightings(Model model) {
