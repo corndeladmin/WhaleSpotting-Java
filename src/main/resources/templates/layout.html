@@ -45,6 +45,17 @@
                 <a class="navbar-link" th:href="@{/add-whale-sighting}">Add Whale Sighting</a>
             </li>
             <li class="navbar-item">
+                <!-- <td th:text="${teacher.additionalSkills} ? 'LOGGED IN': 'LOGGED OUT'"></td> -->
+                <!-- <td>
+                    <span th:if="${member.username != null}">logged in</span>
+                    <span th:unless="${member.username == 'F'}">not logged in</span>
+                </td> -->
+                <!-- <td th:text="${member?.username?}"></td> -->
+                <!-- <span th:text="${member!= null} ? ${member.username} : 'null value!'">someValue</span> -->
+                <span th:text="${memberId != null} ? ${memberId} : 'null value!'">someValue</span>
+
+            </li>
+            <li class="navbar-item">
                 <a class="navbar-link" href="javascript: document.logoutForm.submit()">Sign Out</a>
                 <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
                     <input hidden type="submit"/>

@@ -27,7 +27,15 @@ public class SightingController {
     //renders the add-sighting form
     @GetMapping("/add-whale-sighting")
     public String getAddSightingPage(Model model) {
-        model.addAttribute("sighting", new Sighting());
+        Sighting sighting = new Sighting();
+        model.addAttribute("sighting", sighting);
+
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        Authentication authentication = securityContext.getAuthentication();
+        MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
+        
+        Long memberId = memberDetails.getMember().getId();
+        model.addAttribute("memberId", memberId);
         return "add_sighting";
     }
 
