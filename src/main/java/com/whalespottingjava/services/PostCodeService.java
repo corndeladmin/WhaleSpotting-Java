@@ -64,6 +64,7 @@ public class PostCodeService {
         String response = null;
         JSONObject result;
         String postcode;
+        
         try {
             response = httpRequestPostCodeApi(url);
             JSONObject json = new JSONObject(response);
