@@ -47,6 +47,10 @@ public class Member {
         this.surname = surname;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getUsername() {
         return username;
     }
