@@ -42,6 +42,9 @@
                 <a class="navbar-link" th:href="@{/}">API</a>
             </li>
             <li class="navbar-item">
+                <a class="navbar-link" th:href="@{/add-whale-sighting}">Add Whale Sighting</a>
+            </li>
+            <li class="navbar-item">
                 <a class="navbar-link" href="javascript: document.logoutForm.submit()">Sign Out</a>
                 <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
                     <input hidden type="submit"/>
