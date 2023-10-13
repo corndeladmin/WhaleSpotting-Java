@@ -5,7 +5,43 @@ Darker-Blue: #1D77C3
 Lightest-Blue: #42BFDD
 */
 
+body {
+    background-color: #42BFDD;
+}
+
 #add-sighting {
     display: flex;
     flex-direction: column;
+    width: 200px;
+    margin: 0 auto;
 }
+
+.submission-labels {
+    font-weight: bold;
+}
+
+form > input {
+    margin: 10px 0;
+    padding: 7px 5px;
+    border: none;
+    border-radius: 5px;
+    max-width: 175px;
+}
+
+#add-sighting-header, #add-sighting-details {
+    width: 200px;
+    margin: 0 auto 20px auto;
+}
+
+@media screen and (min-width: 500px) {
+    #add-sighting-header, #add-sighting-details {
+        width: unset;
+        margin: 0 0 20px 0;
+    }
+
+    #add-sighting {
+        width: unset;
+        margin: 0;
+    }
+}
+

@@ -3,6 +3,7 @@ plugins {
     id 'application'
     id 'org.springframework.boot' version '3.0.2'
     id 'io.spring.dependency-management' version '1.1.0'
+    id 'com.diffplug.spotless' version '6.22.0'
 }
 
 group = 'com'
@@ -31,6 +32,9 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation 'org.json:json:20230618'
 }
 
 tasks.named('test') {
@@ -40,4 +44,36 @@ tasks.named('test') {
 application {
     // Define the main class for the application.
     mainClass = 'com.whalespottingjava.WhaleSpottingJavaApplication'
+}
+
+spotless {
+  ratchetFrom 'origin/main'
+
+  format 'misc', {
+    target '**/*.gradle', '**/*.md', '**/*.yml', '**/*.yaml', '**/*.properties'
+    trimTrailingWhitespace()
+    indentWithSpaces()
+    endWithNewline()
+  }
+
+  java {
+    googleJavaFormat('1.17.0')
+    formatAnnotations()
+    trimTrailingWhitespace()
+    indentWithSpaces()
+    endWithNewline()
+    removeUnusedImports()
+  }
+
+  format 'css', {
+    target 'src/main/resources/**/*.css'
+
+    prettier()
+  }
+
+  format 'html', {
+    target 'src/main/resources/**/*.html'
+
+    prettier()
+  }
 }
