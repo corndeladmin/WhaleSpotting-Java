@@ -10,10 +10,9 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class SightingController {
@@ -72,5 +71,13 @@ public class SightingController {
     model.addAttribute("sightings", sightingService.getAllPendingSightings());
     
     return "sightings_map";
+  }
+
+  @GetMapping("/delete/{id}")
+  @ResponseStatus(HttpStatus.OK)
+  public String deleteSightingById(@PathVariable(value="id") Long id) {
+    sightingService.deleteRejectedPendingSighting(id);
+
+    return "redirect:/sightings/pending";
   }
 }
