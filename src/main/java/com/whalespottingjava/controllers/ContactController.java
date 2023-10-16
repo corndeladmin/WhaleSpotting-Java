@@ -40,6 +40,6 @@ public class ContactController {
         message.setText(mailContent);
 
         mailSender.send(message);
-        return "message";
+        return "message"; //save
     }
 }
