@@ -33,13 +33,11 @@ h2 {
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  height: 100vh;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
 .grid-item-2-img {
