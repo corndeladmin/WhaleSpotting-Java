@@ -19,17 +19,14 @@
                     There was an error loading the pending sightings.
                 </div>
 
-                <div th:if="${sightings==null and sightings.empty}">
+                <div th:if="${sightings.empty}">
                     All pending sightings have been approved. There is no task to do.
                     Time for tea & cake!
                 </div>
 
-                <div th:if="${sightings!=null and !sightings.empty}">
-
+                <div th:if="${!sightings.empty}">
                     <form th:action="@{/admin}" method="post" th:object="${sightings}">
-
                         <div class="sightings-pending-admin-form" th:each="sighting: ${sightings}">
-
                             <div class="sighting">
                                 <div class="checkboxgroup">
                                     <span>Latitude</span>
@@ -39,13 +36,11 @@
                                     <span>Longitude</span>
                                     <span th:text="${sighting. getLongitude()}"></span>
                                 </div>
-                                </div>
                                 <div class="checkboxgroup">
                                     <span>User ID </span>
                                     <span th:text="${sighting.getId()}"></span>
                                 </div>
                             </div>
-
                             <div class="checkboxgroup">
                                 <label for="radio-button-id1">Reject</label>
                                 <input type="radio" th:name="${sighting.getId()}" value="reject" id="radio-button-id1" />
@@ -54,21 +49,15 @@
                                 <label for="radio-button-id2">Approve</label>
                                 <input type="radio" th:name="${sighting.getId()}" value="approve" id="radio-button-id2"} />
                             </div>
-
                         </div>
-
                         <div class="flex-container-for-submit">
                             <div class="button-submit-sights" >
                                 <input type="submit" value="Submit">
                             </div>
                         </div>
-
                     </form>
-
                 </div>
-
             </div>
-
         </section>
     </body>
 </html>
