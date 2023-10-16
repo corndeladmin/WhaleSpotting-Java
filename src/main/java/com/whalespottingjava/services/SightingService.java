@@ -2,13 +2,9 @@ package com.whalespottingjava.services;
 
 import com.whalespottingjava.models.database.Sighting;
 import com.whalespottingjava.repositories.SightingRepository;
-import groovy.transform.stc.ClosureSignatureHint;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -35,8 +31,6 @@ public class SightingService {
     }
 
     public void addBulkSightings(List<Sighting> sightings) {
-        // Validate sightings (Use jakarta?)
-        // Add to DB
         this.sightingRepository.saveAll(sightings);
     } 
       

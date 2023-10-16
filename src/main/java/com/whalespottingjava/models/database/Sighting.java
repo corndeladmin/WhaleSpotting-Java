@@ -1,11 +1,9 @@
 package com.whalespottingjava.models.database;
 
-import java.sql.Date;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.PastOrPresent;
+import java.sql.Date;
 
 @Entity
 @Table(name = "whale_sighting")

@@ -10,6 +10,6 @@ public class ApiControllerAdvice {
     @ExceptionHandler({ DataIntegrityViolationException.class, ConstraintViolationException.class })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String dataIntegrityViolationHandler(Exception ex) {
-        return ex.getLocalizedMessage(); // TODO: 16/10/2023 This reveals implementation details on the database, error messages should be overridden 
+        return ex.getLocalizedMessage(); // TODO: ws-102: This reveals implementation details on the database, error messages should be overridden
     }
 }
