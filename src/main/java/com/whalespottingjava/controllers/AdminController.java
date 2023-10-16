@@ -44,8 +44,11 @@ public class AdminController {
                 Sighting currentSighting = sightingService.getSightingById(sighting.getId());
                 sightingService.addSighting(currentSighting);
             }
-            
+            if (sighting.getApproved() == null) {
+                continue;
+            }
         }
+        model.addAttribute("sightings", sightingService.getAllPendingSightings());
         return "admin";
     }
 }
