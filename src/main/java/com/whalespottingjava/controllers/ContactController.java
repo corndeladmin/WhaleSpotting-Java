@@ -1,11 +1,13 @@
 package com.whalespottingjava.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.web.bind.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.mail.javamail.JavaMailSender;
+
 
 @Controller
 public class ContactController {
@@ -19,8 +21,8 @@ public class ContactController {
     }
 
     @PostMapping("/contact")
-    public String submitContact(HttpSerlvetRequest request){
-        String fullname = request.getParameter("fullname");
+    public String submitContact(HttpServletRequest request){
+        String full_name = request.getParameter("full_name");
         String email = request.getParameter("email");
         String subject = request.getParameter("subject");
         String content = request.getParameter("content");
@@ -29,8 +31,8 @@ public class ContactController {
         message.setFrom("whalespottingapp@gmail.com");
         message.setTo("whalespottingapp@gmail.com");
 
-        String mailSubject=fullname+ "has sent a message";
-        String mailContent="Sender name: "+ fullname+ "\n";
+        String mailSubject=full_name+ " has sent a message";
+        String mailContent="Sender name: "+ full_name+ "\n";
         mailContent+="Sender email: "+ email+ "\n";
         mailContent+="Sender subject: "+ subject+ "\n";
         mailContent+="Sender content: "+ content+ "\n";

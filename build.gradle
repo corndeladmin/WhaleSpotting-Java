@@ -34,6 +34,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.apache.tomcat:tomcat-servlet-api:9.0.37'
+
+
 
 
     // https://mvnrepository.com/artifact/org.json/json
