@@ -13,8 +13,8 @@
         </div>
         <div>
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'Details')">Details</button>
-                <button class="tablinks" onclick="openCity(event, 'Preferences')">Preferences</button>
+                <button class="tablinks" onclick="openTab(event, 'Details')">Details</button>
+                <button class="tablinks" onclick="openTab(event, 'Preferences')">Preferences</button>
             </div>
             <div id="Details" class="tabcontent">
                 <div class="detail">
@@ -25,8 +25,16 @@
                     <label for="password">Password </label>
                     <input id="password" type="password" readonly>
                 </div>
+                <div class="detail">
+                    <label for="firstName">First Name </label>
+                    <input id="firstName" type="text" readonly>
+                </div>
+                <div class="detail">
+                    <label for="lastName">Last Name </label>
+                    <input id="lastName" type="text" readonly>
+                </div>
             </div>
-            <div id="Preferences" class="tabcontent">
+            <div id="Preferences" class="tabcontent preference">
                 <div class="detail">
                     <label class="switch">
                         <input type="checkbox">
@@ -34,11 +42,25 @@
                         Dark Mode
                     </label>
                 </div>
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        Private Profile
+                    </label>
+                </div>
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        Keep me signed in
+                    </label>
+                </div>
             </div>
         </div>
     </div>
 <script>
-    function openCity(evt, cityName) {
+    function openTab(evt, tab) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -55,7 +77,13 @@
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
+  if(document.getElementById(tab).id == "Preferences"){
+  document.getElementById(tab).style.display = "flex";
+  }
+  else{
+  document.getElementById(tab).style.display = "block";
+  }
+
   evt.currentTarget.className += " active";
 }
 </script>

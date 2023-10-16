@@ -1,10 +1,11 @@
 .myaccount-body {
-    width:80%;
+    margin:3rem;
+    width:60%;
     align-self:center;
 }
 
 .detail {
-    margin:1rem;
+    margin:1rem 2rem;
 }
 
 /* The switch - the box around the slider */
@@ -99,9 +100,13 @@ input:checked + .slider:before {
 }
 
 /* Style the tab content */
-.tabcontent {
+.tabcontent{
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+.preference {
+display:flex;
+flex-direction:row;
 }
