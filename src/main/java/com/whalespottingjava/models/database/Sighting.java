@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.PastOrPresent;
 
 @Entity
 @Table(name = "whale_sighting")
@@ -19,6 +21,7 @@ public class Sighting {
     @Column(name = "member_id", nullable = false)
     private int memberId;
     @Column(name = "date")
+    @PastOrPresent
     private Date date;
     @Column(name = "latitude")
     private double latitude;
