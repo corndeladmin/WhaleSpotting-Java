@@ -7,6 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
@@ -24,6 +25,13 @@ public class AdminController {
     @ResponseStatus(HttpStatus.OK)
     public String getAdminPage(Model model) {
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
+        return "admin";
+    }
+
+    @PostMapping("/admin")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String postSightings(Model model) {
+        
         return "admin";
     }
 }
