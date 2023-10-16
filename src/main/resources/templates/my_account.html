@@ -4,24 +4,60 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>My Account</title>
-    <link th:href="@{/css/my_account.css}" rel="stylesheet" />
+    <link th:href="@{/css/my_account.css}" rel="stylesheet"/>
 </head>
 <body class="page-container" layout:fragment="content">
-<div class="myaccount-body">
-    <div>
-        <h1>My Account</h1>
-    </div>
-    <div>
-        <div>
-            <label for="email">Email  </label>
-            <input id="email" type="email" readonly />
+    <div class="myaccount-body">
+        <div >
+            <h1>My Account</h1>
         </div>
         <div>
-            <label for="password">Password  </label>
-            <input id="password" type="password" readonly>
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'Details')">Details</button>
+                <button class="tablinks" onclick="openCity(event, 'Preferences')">Preferences</button>
+            </div>
+            <div id="Details" class="tabcontent">
+                <div class="detail">
+                    <label for="email">Email </label>
+                    <input id="email" type="email" readonly/>
+                </div>
+                <div class="detail">
+                    <label for="password">Password </label>
+                    <input id="password" type="password" readonly>
+                </div>
+            </div>
+            <div id="Preferences" class="tabcontent">
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        Dark Mode
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+<script>
+    function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 </body>
 </html>
