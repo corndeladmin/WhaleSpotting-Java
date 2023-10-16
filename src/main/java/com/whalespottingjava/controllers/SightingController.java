@@ -29,13 +29,13 @@ public class SightingController {
     public String getAddSightingPage(Model model) {
         Sighting sighting = new Sighting();
         model.addAttribute("sighting", sighting);
-
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();
         MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
-        
+        Boolean isLoggedIn = authentication.isAuthenticated();
         Long memberId = memberDetails.getMember().getId();
         model.addAttribute("memberId", memberId);
+        model.addAttribute("isLoggedIn", isLoggedIn);
         return "add_sighting";
     }
 

@@ -44,36 +44,24 @@
             <li class="navbar-item">
                 <a class="navbar-link" th:href="@{/add-whale-sighting}">Add Whale Sighting</a>
             </li>
+            <!-- If logged in, render sign out link, otherwise render sign in and register links-->
             <li class="navbar-item">
-                <!-- <td th:text="${teacher.additionalSkills} ? 'LOGGED IN': 'LOGGED OUT'"></td> -->
-                <!-- <td>
-                    <span th:if="${member.username != null}">logged in</span>
-                    <span th:unless="${member.username == 'F'}">not logged in</span>
-                </td> -->
-                <!-- <td th:text="${member?.username?}"></td> -->
-                <!-- <span th:text="${member!= null} ? ${member.username} : 'null value!'">someValue</span> -->
-                <span th:text="${memberId != null} ? ${memberId} : 'null value!'">someValue</span>
-
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" href="javascript: document.logoutForm.submit()">Sign Out</a>
-                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-                    <input hidden type="submit"/>
-                </form>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" th:href="@{/register}">Register</a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" th:href="@{/login}">Sign In</a>
+                <span th:unless="${isLoggedIn == true}">
+                    <a class="navbar-link loggedOutOptions" th:href="@{/login}">Sign In</a>
+                </span>
+                <a class="navbar-link loggedOutOptions" th:href="@{/register}">Register</a>
+                <span th:if="${isLoggedIn  == true}">
+                <a class='navbar-link' href='javascript: document.logoutForm.submit()'>Sign Out</a>
+                    <form name='logoutForm' th:action="@{/logout}" method="post" th:hidden="true">
+                        <input hidden type="submit"/>
+                    </form>
+                </span>
             </li>
         </ul>
     </nav>
-
     <div class="content-container">
         <div layout:fragment="content"></div>
     </div>
-
     <footer>
         <div class="footer-container">
             <div>WhaleSpotting</div>
