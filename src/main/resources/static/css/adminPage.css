@@ -16,6 +16,10 @@
       padding: 1rem;
 }
 
+.sightings-pending-empty {
+    padding: 4rem;
+}
+
 .sightings-pending-admin-form {
     border: 5px solid var(--lightest-blue);
     border-radius: 25px;
