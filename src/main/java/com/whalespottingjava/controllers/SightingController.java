@@ -71,7 +71,7 @@ public class SightingController {
     return "sightings_map";
   }
 
-  @GetMapping("/delete/{id}")
+  @GetMapping("/sightings/delete/{id}")
   @ResponseStatus(HttpStatus.OK)
   public String deleteSightingById(@PathVariable(value="id") Long id) {
     sightingService.deleteRejectedPendingSighting(id);
