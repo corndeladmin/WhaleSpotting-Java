@@ -35,4 +35,6 @@ public class SightingService {
     public List<Sighting> getAllPendingSightings() {
         return this.sightingRepository.findByApprovedFalse();
     }
+
+    public void deleteRejectedPendingSighting(Long sightingId) { sightingRepository.deleteById(sightingId); }
 }

@@ -28,26 +28,4 @@ public class AdminController {
 
         return "admin";
     }
-
-    @GetMapping("/admin2")
-    @ResponseStatus(HttpStatus.OK)
-    public String getAdminPage2(Model model) {
-        model.addAttribute("sightings", sightingService.getAllPendingSightings());
-
-        return "admin2";
-    }
-
-    @PostMapping("/admin2")
-    public String getAdminPage3() {
-        System.out.println("\n\n\n\n\n\n\n\n HERRRRREEEEEE \n\n\n\n\n\n\n\n\n\n\n");
-        return "admin2";
-    }
-
-
-
-    @PostMapping("/admin")
-    public String getAdminPage4() {
-        return "admin";
-    }
-
 }
