@@ -41,7 +41,7 @@ public class AdminController {
                 sightingService.deleteRejectedPendingSighting(sighting.getId());
             }
             if (sighting.getApproved() == true) {
-                Optional<Sighting> currentSighting = sightingService.getSightingById(sighting.getId());
+                Sighting currentSighting = sightingService.getSightingById(sighting.getId());
                 sightingService.addSighting(currentSighting);
             }
             

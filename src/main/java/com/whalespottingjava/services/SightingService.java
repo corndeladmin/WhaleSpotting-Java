@@ -3,6 +3,7 @@ package com.whalespottingjava.services;
 import com.whalespottingjava.models.database.Sighting;
 import com.whalespottingjava.repositories.SightingRepository;
 import groovy.transform.stc.ClosureSignatureHint;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,13 +25,13 @@ public class SightingService {
         return sightingRepository.findAll();
     }
 
-    public Optional<Sighting> getSightingById(Long id) {
-        return sightingRepository.findById(id);
+    public Sighting getSightingById(Long id) {
+        return sightingRepository.getReferenceById(id);
     }
 
-    public void addSighting(Optional<Sighting> currentSighting) 
+    public void addSighting(Sighting sighting) 
     {
-        sightingRepository.saveAndFlush(currentSighting);
+        sightingRepository.saveAndFlush(sighting);
     }
 
     public List<Sighting> getAllApprovedSightings() { // TODO: 12/10/2023 Returns raw JSON array, should be wrapped in object
