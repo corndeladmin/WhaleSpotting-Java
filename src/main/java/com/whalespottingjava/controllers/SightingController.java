@@ -54,10 +54,6 @@ public class SightingController {
     return "add_sighting_confirmation";
   }
 
-  @GetMapping("/sightings/approved")
-  @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-  public void getAllApprovedSightings() {}
-
   @GetMapping("/sightings/pending")
   @ResponseStatus(HttpStatus.OK)
   public String getPendingSightings(Model model) {
