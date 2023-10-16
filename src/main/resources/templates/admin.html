@@ -26,7 +26,7 @@
 
                 <div th:if="${sightings!=null and !sightings.empty}">
 
-                    <form th:action="@{/admin}" method="post" th:object="${sightings}">
+                    <form th:action="@{/admin}" method="post" th:object="${adminApprovalResponse}">
 
                         <div class="sightings-pending-admin-form" th:each="sighting: ${sightings}">
 
@@ -37,13 +37,14 @@
                                 </div>
                                 <div class="checkboxgroup">
                                     <span>Longitude</span>
-                                    <span th:text="${sighting. getLongitude()}"></span>
+                                    <span th:text="${sighting.getLongitude()}"></span>
                                 </div>
 
                                 <div class="checkboxgroup">
                                     <span>Whale Type </span>
                                     <span>Whales1</span>
                                 </div>
+
                                 <div class="checkboxgroup">
                                     <span>User ID </span>
                                     <span th:text="${sighting.getId()}"></span>
@@ -52,11 +53,11 @@
 
                             <div class="checkboxgroup">
                                 <label for="radio-button-id1">Reject</label>
-                                <input type="radio" th:name="${sighting.getId()}" value="reject" id="radio-button-id1" />
+                                <input type="radio" th:name="${sighting.getId()}" value="0" id="radio-button-id1" />
                             </div>
                             <div class="checkboxgroup">
                                 <label for="radio-button-id2">Approve</label>
-                                <input type="radio" th:name="${sighting.getId()}" value="approve" id="radio-button-id2"} />
+                                <input type="radio" th:name="${sighting.getId()}" value="1" id="radio-button-id2"} />
                             </div>
 
                         </div>
