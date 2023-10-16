@@ -47,11 +47,11 @@
                             </div>
                             <div class="checkboxgroup">
                                 <label for="radio-button-id1">Reject</label>
-                                <input type="radio" th:name="${sighting.getId()}" value="0" id="radio-button-id1" />
+                                <input type="radio" th:name="${sighting.getId()}" value="${status.REJECT}" id="radio-button-id1" />
                             </div>
                             <div class="checkboxgroup">
                                 <label for="radio-button-id2">Approve</label>
-                                <input type="radio" th:name="${sighting.getId()}" value="1" id="radio-button-id2" />
+                                <input type="radio" th:name="${sighting.getId()}" value="${status.APPROVE}" id="radio-button-id2" />
                             </div>
                         </div>
                         <div class="flex-container-for-submit">

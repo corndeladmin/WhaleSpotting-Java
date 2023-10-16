@@ -1,6 +1,9 @@
 package com.whalespottingjava.controllers;
 
 import com.whalespottingjava.services.SightingService;
+
+import com.whalespottingjava.models.enums.ApprovalStatus;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,8 +25,9 @@ public class AdminController {
 
     @GetMapping("/admin")
     @ResponseStatus(HttpStatus.OK)
-    public String getAdminPage(Model model) {
+    public String getAdminPage(Model model, ApprovalStatus status) {
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
+        model.addAttribute("status", status);
         return "admin";
     }
 }

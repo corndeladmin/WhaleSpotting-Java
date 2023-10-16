@@ -1,9 +1,11 @@
 package com.whalespottingjava.models.requests;
 
+import com.whalespottingjava.models.enums.ApprovalStatus;
+
 public class AdminApproval {
 
     private Long SightingId;
-    private Boolean approved;
+    private ApprovalStatus approved;
 
     public void setId(Long SightingId) {
         this.SightingId = SightingId;
@@ -13,9 +15,9 @@ public class AdminApproval {
         return SightingId;
     }
 
-    public void setApproved(int value) { this.approved = (value == 1); }
+    public void setApproved(ApprovalStatus status) { this.approved = status; }
 
-    public Boolean getApproved() {
+    public ApprovalStatus getApproved() {
         return approved;
     }
 }
