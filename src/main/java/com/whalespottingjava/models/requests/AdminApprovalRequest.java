@@ -1,6 +1,6 @@
-package com.whalespottingjava.services;
+package com.whalespottingjava.models.requests;
 
-public class AdminApprovalResponse {
+public class AdminApprovalRequest {
 
     private Long SightingId;
     private Boolean approved;

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -23,9 +24,13 @@ public class SightingService {
         return sightingRepository.findAll();
     }
 
-    public void addSighting(Sighting sighting) 
+    public Optional<Sighting> getSightingById(Long id) {
+        return sightingRepository.findById(id);
+    }
+
+    public void addSighting(Optional<Sighting> currentSighting) 
     {
-        sightingRepository.saveAndFlush(sighting);
+        sightingRepository.saveAndFlush(currentSighting);
     }
 
     public List<Sighting> getAllApprovedSightings() { // TODO: 12/10/2023 Returns raw JSON array, should be wrapped in object
