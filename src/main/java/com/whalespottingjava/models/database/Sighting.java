@@ -10,75 +10,73 @@ import jakarta.validation.constraints.PastOrPresent;
 @Entity
 @Table(name = "whale_sighting")
 public class Sighting {
-    private static final String ID_SEQUENCE = "whale_sighting_id_sequence";
+  private static final String ID_SEQUENCE = "whale_sighting_id_sequence";
 
-    @Id
-    @SequenceGenerator(name = ID_SEQUENCE, sequenceName = ID_SEQUENCE, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = ID_SEQUENCE)
-    @Hidden
-    private Long id;
+  @Id
+  @SequenceGenerator(name = ID_SEQUENCE, sequenceName = ID_SEQUENCE, allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = ID_SEQUENCE)
+  @Hidden
+  private Long id;
+  
+  @Column(nullable = false)
+  private Long member_id;
+  @PastOrPresent
+  private Date date;
+  private double latitude;
+  private double longitude;
+  @Hidden
+  private Boolean approved;
 
-    @Column(name = "member_id", nullable = false)
-    private int memberId;
-    @Column(name = "date")
-    @PastOrPresent
-    private Date date;
-    @Column(name = "latitude")
-    private double latitude;
-    @Column(name = "longitude")
-    private double longitude;
-    @Column(name = "approved")
-    @Hidden
-    private Boolean approved;
+  public Sighting() {}
 
-    protected Sighting() {}
-    
-    public Sighting(int memberId, Date date, double latitude, double longitude) {
-        this.memberId = memberId;
-        this.date = date;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.approved = false;
-    }
+  public Sighting(Date date, double latitude, double longitude) {
+    this.date = date;
+    this.latitude = latitude;
+    this.longitude = longitude;
+    this.approved = false;
+  }
 
+  public Long getMemberId() {
+    return member_id;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public void setMemberId(Long member_id) {
+    this.member_id = member_id;
+  }
 
-    public double getLatitude() {
-        return latitude;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
+  public Date getDate() {
+    return date;
+  }
 
-    public double getLongitude() {
-        return longitude;
-    }
+  public void setDate(Date date) {
+    this.date = date;
+  }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
+  public double getLatitude() {
+    return latitude;
+  }
 
-    public Boolean getApproved() {
-        return approved;
-    }
+  public void setLatitude(double latitude) {
+    this.latitude = latitude;
+  }
 
-    public void setApproved(Boolean approved) {
-        this.approved = approved;
-    }
+  public double getLongitude() {
+    return longitude;
+  }
 
-    public Date getDate() {
-        return this.date;
-    }
+  public void setLongitude(double longitude) {
+    this.longitude = longitude;
+  }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+  public Boolean getApproved() {
+    return approved;
+  }
 
-    public int getMemberId() {
-        return this.memberId;
-    }
+  public void setApproved(Boolean approved) {
+    this.approved = approved;
+  }
 }
