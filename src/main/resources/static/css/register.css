@@ -61,3 +61,10 @@
     text-align: center;
     color: crimson;
 }
+
+.waves {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
