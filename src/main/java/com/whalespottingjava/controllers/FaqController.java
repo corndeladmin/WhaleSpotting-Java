@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.whalespottingjava.models.MemberDetails;
+import com.whalespottingjava.models.enums.MemberRole;
 
 @Controller
 public class FaqController {
@@ -15,7 +16,11 @@ public class FaqController {
     public String getFaqPage(Model model) {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();
-        Boolean isLoggedIn = authentication.isAuthenticated();
+        Boolean isLoggedIn = false;
+        if (authentication.getPrincipal() instanceof MemberDetails) {
+            MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
+            isLoggedIn = true;
+        }
         model.addAttribute("isLoggedIn", isLoggedIn);
         return "faq";
     }
