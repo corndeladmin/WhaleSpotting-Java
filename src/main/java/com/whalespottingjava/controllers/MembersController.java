@@ -9,4 +9,9 @@ public class MembersController {
     public String getMembersPage() {
         return "members";
     }
+
+    @GetMapping("/members/myaccount")
+    public String getMyAccountPage() {
+        return "my_account";
+    }
 }
