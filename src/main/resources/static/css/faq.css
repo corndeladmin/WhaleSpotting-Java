@@ -1,3 +1,6 @@
+  .extra-questions{
+  text-align: center;
+  }
 
   h1 {
     margin: 20px auto 80px;
@@ -81,4 +84,5 @@
   details[open] .control-icon-expand {
     display: none;
   }
+
   

@@ -22,6 +22,11 @@ body {
   padding: 48px;
 }
 
+.message-after{
+    text-align: center;
+    padding: 20px;
+}
+
 .form-wrapper {
   margin: 0 auto;
   max-width: 550px;
