@@ -44,6 +44,11 @@
             <li class="navbar-item">
                 <a class="navbar-link" th:href="@{/add-whale-sighting}">Add Whale Sighting</a>
             </li>
+            <li class="navbar-item">
+                <span sec:authorize="hasRole('ADMIN')">
+                    <a class="navbar-link" th:href="@{/admin}">Admin</a>
+                </span>
+            </li>
             <!-- If logged in, render sign out link, otherwise render sign in and register links-->
             <li class="navbar-item">
                 <span th:unless="${isLoggedIn == true}">
