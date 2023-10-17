@@ -13,8 +13,12 @@
 }
 
 .register-container {
+    box-sizing: border-box;
+    height: max-content;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .register-form {
