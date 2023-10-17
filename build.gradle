@@ -22,7 +22,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-
+     implementation 'org.springframework.boot:spring-boot-starter-mail'
+    
     // Swagger and openAPI stuff
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
@@ -32,6 +33,11 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.apache.tomcat:tomcat-servlet-api:9.0.37'
+
+
+
 
     // https://mvnrepository.com/artifact/org.json/json
     implementation 'org.json:json:20230618'
