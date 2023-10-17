@@ -58,3 +58,13 @@ role: ADMIN
 ```
 
 You should be able to create more users by running the app and visiting `http://localhost:8080/register` or adding them straight to your database.
+
+***
+
+## Style Guide
+
+https://google.github.io/styleguide/javaguide.html
+
+## Naming Standards:
+
+- Branch Names: `WS-xxx-ticket-name`

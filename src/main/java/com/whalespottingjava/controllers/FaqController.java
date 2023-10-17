@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.whalespottingjava.models.MemberDetails;
 
 @Controller
-public class HomeController {
-    @GetMapping("/")
-    public String getHomePage(Model model) {
+public class FaqController {
+    @GetMapping("/faq")
+    public String getFaqPage(Model model) {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();
         Boolean isLoggedIn = authentication.isAuthenticated();
         model.addAttribute("isLoggedIn", isLoggedIn);
-        return "home";
+        return "faq";
     }
 }

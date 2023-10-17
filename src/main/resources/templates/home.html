@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="layout">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:th="https://www.thymeleaf.org" layout:decorate="layout">
+
     <head>
         <title>Home</title>
+        <link th:href="@{/css/application.css}" rel="stylesheet" />
+        <link th:href="@{/css/home-page-style.css}" rel="stylesheet" />
     </head>
+
     <body>
         <section layout:fragment="content">
-            <h1>Welcome to Whale Spotting!</h1>
+            <div class="grid-container">
+                <div class="grid-item-1">
+                    <h1>Welcome to whale Spotting</h1>
+                    <p>Welcome Here is where we will be putting our introductory information:...It’s possible to watch
+                        whales and dolphins without leaving dry land (perfect for those who want to avoid seasickness!). We
+                        recommend viewing from cliff tops and other vantage points whenever possible as this reduces the
+                        likelihood of whales and dolphins being disturbed.</p>
+                </div>
+                <div class="grid-item-2">
+                    <img class="grid-item-2-img"
+                        src="https://images.prismic.io/visiticeland/b5f8a9e5-9819-47e6-b6bd-5fd91e4cd225_whale_watching.jpg?auto=compress,format"
+                        alt="people checking whales">
+                    <h2>Here Some people saw some whales<br />
+                        Probably in a place. Maybe with a species of whale.</h2>
+                </div>
+                <div class="grid-item-3">
+                    <h2>Spotted a whale yourself? Add your sighting by clicking the button below:
+                        <h2 />
+                        <button onclick="location.href='#'" type="button" class="button">ADD A SIGHTING</button>
+                </div>
+                <div class="grid-item-4">
+                    <img class="grid-item-4-img"
+                        src="https://images.unsplash.com/photo-1568430328012-21ed450453ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+                        alt="people checking whales">
+                    <h2>Humpback whales don’t eat for most of the year
+                    </h2>
+                    <p>Humpback whales in the Southern Hemisphere live off their fat reserves for 5.5-7.5 months each year,
+                        as they migrate from their tropical breeding grounds to the Antarctic, to feed on krill.
+                        ​</p>
+                </div>
 
-            <p>This is the home page.</p>
+            </div>
         </section>
     </body>
+
 </html>
+    

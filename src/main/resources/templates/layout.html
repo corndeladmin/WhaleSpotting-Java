@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="whales, spotting, sight, science, wild live">
+    <meta name="keywords" content="whales, spotting, sight, science, wild live, family activity, fun">
     <meta name="description" content="Sight and spot whales all around the world or near you">
     <meta name="authors" content="Amex Apprentice 2023">
     <link th:href="@{/css/application.css}" rel="stylesheet" />
@@ -36,45 +36,45 @@
                 <a class="navbar-link" th:href="@{/}">Sightings</a>
             </li>
             <li class="navbar-item">
-                <a class="navbar-link" th:href="@{/}">FAQ/INFO</a>
+                <a class="navbar-link" th:href="@{/faq}">FAQ/INFO</a>
             </li>
             <li class="navbar-item">
                 <a class="navbar-link" th:href="@{/}">API</a>
             </li>
             <li class="navbar-item">
-                <a class="navbar-link" href="javascript: document.logoutForm.submit()">Sign Out</a>
-                <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-                    <input hidden type="submit"/>
-                </form>
+                <a class="navbar-link" th:href="@{/add-whale-sighting}">Add Whale Sighting</a>
             </li>
+            <!-- If logged in, render sign out link, otherwise render sign in and register links-->
             <li class="navbar-item">
-                <a class="navbar-link" th:href="@{/register}">Register</a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" th:href="@{/login}">Sign In</a>
+                <span th:unless="${isLoggedIn == true}">
+                    <a class="navbar-link loggedOutOptions" th:href="@{/login}">Sign In</a>
+                </span>
+                <a class="navbar-link loggedOutOptions" th:href="@{/register}">Register</a>
+                <span th:if="${isLoggedIn  == true}">
+                <a class='navbar-link' href='javascript: document.logoutForm.submit()'>Sign Out</a>
+                    <form name='logoutForm' th:action="@{/logout}" method="post" th:hidden="true">
+                        <input hidden type="submit"/>
+                    </form>
+                </span>
             </li>
         </ul>
     </nav>
-
     <div class="content-container">
         <div layout:fragment="content"></div>
     </div>
-
-
     <footer>
         <div class="footer-container">
             <div>WhaleSpotting</div>
-            <div><i class="fa fa-github"></i><a  href="https://github.com/charlottemothersole/WhaleSpotting-Java"> Github repository </a></div>
+            <div><i class="fa fa-github"></i><a href="https://github.com/charlottemothersole/WhaleSpotting-Java"> Github repository </a></div>
             <div>©Copyright <span id="currentYear"></span>, BootCamp Project Amex</div>
             <script>
-                    console.log("here");
-                    const currentDate = new Date();
-                    let currentYear = currentDate.getFullYear();
-                    document.getElementById("currentYear").innerHTML = currentYear;
+                const currentDate = new Date();
+                let currentYear = currentDate.getFullYear();
+                document.getElementById("currentYear").innerHTML = currentYear;
             </script>
         </div>
-
     </footer>
 
 </body>
+
 </html>

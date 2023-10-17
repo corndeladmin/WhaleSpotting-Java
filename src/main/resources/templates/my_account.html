@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html layout:decorate="layout"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Account</title>
+    <link th:href="@{/css/my_account.css}" rel="stylesheet"/>
+</head>
+<body class="page-container" layout:fragment="content">
+    <div class="myaccount-body">
+        <div >
+            <h1>My Account</h1>
+        </div>
+        <div>
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Details')">Details</button>
+                <button class="tablinks" onclick="openTab(event, 'Preferences')">Preferences</button>
+            </div>
+            <div id="Details" class="tabcontent">
+                <div class="detail">
+                    <label for="email">Email </label>
+                    <input id="email" type="email" readonly/>
+                </div>
+                <div class="detail">
+                    <label for="password">Password </label>
+                    <input id="password" type="password" readonly>
+                </div>
+                <div class="detail">
+                    <label for="firstName">First Name </label>
+                    <input id="firstName" type="text" readonly>
+                </div>
+                <div class="detail">
+                    <label for="lastName">Last Name </label>
+                    <input id="lastName" type="text" readonly>
+                </div>
+            </div>
+            <div id="Preferences" class="tabcontent preference">
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                         <p>Dark Mode</p>
+                    </label>
+                </div>
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        <p>Private Profile</p>
+                    </label>
+                </div>
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        <p>Keep me signed in</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function openTab(evt, tab) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  if(document.getElementById(tab).id == "Preferences"){
+  document.getElementById(tab).style.display = "flex";
+  }
+  else{
+  document.getElementById(tab).style.display = "block";
+  }
+
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>
