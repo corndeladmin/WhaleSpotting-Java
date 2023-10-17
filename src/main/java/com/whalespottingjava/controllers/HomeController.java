@@ -17,12 +17,14 @@ public class HomeController {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();
         Boolean isLoggedIn = authentication.isAuthenticated();
+        System.out.println(isLoggedIn);
         model.addAttribute("isLoggedIn", isLoggedIn);
-        MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
-        //use ternary operator
-        MemberRole role = memberDetails.getMember().getRole();
-        if (role == MemberRole.ADMIN) {
-            model.addAttribute("role", role );
+        if (authentication.getPrincipal() instanceof MemberDetails) {
+            MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
+            MemberRole role = memberDetails.getMember().getRole();
+            if (role == MemberRole.ADMIN) {
+                model.addAttribute("role", role);
+            }
         }
         return "home";
     }
