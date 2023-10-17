@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-h1{
+h1 {
   text-align: center;
 }
 body {
@@ -22,9 +22,9 @@ body {
   padding: 48px;
 }
 
-.message-after{
-    text-align: center;
-    padding: 20px;
+.message-after {
+  text-align: center;
+  padding: 20px;
 }
 
 .form-wrapper {
