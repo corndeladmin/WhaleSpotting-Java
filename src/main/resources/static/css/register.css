@@ -3,6 +3,7 @@
     .register-textfields { height: 1.5rem; width: 250px; }
     .warning-state { font-size: 12px; }
     .register-button { font-size: 24px; }
+
 }
 
 @media (max-width: 640px) {
@@ -21,36 +22,18 @@
     align-items: center;
 }
 
-.register-form {
-    display: flex;
-    justify-content:center;
-    align-items: center;
+.form-container {
+    display: inline-flex;
+    flex-direction: column;
 }
-
-.register-heading {
-    text-align: center;
-    margin-top: 4rem;
+.label-container {
+    display: inline-flex;
+    flex-direction: column;
 }
-
-.register-inputs {
-    display: flex;
-    flex-direction:column;
-    margin-bottom:1rem;
-    gap: 0.5rem;
-}
-
-.input-container {
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-}
-
-.register-textfields {
-    border: 1px solid black;
-    border-radius: .25rem;
-}
-
 .register-button {
+    margin-left: auto;
+}
+.register-button > input {
     font-weight: 400;
 	text-align: center;
 	border: none;
@@ -61,14 +44,18 @@
     background-color: #007bff;
 }
 
-.warning-state {
-    text-align: center;
-    color: crimson;
+.input-field {
+    border: 1px solid black;
+    border-radius: .25rem;
 }
-
 .waves {
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: -1;
+}
+
+.warning-state {
+    text-align: center;
+    color: crimson;
 }
