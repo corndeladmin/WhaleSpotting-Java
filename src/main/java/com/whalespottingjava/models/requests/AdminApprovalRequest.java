@@ -2,20 +2,21 @@ package com.whalespottingjava.models.requests;
 
 public class AdminApprovalRequest {
 
-    private Long SightingId;
-    private Boolean approved;
+    private Long sightingId;
+    private String approved;
 
-    public void setId(Long SightingId) {
-        this.SightingId = SightingId;
+    public AdminApprovalRequest() {}
+    public void setId(Long sightingId) {
+        this.sightingId = sightingId;
     }
 
     public Long getId() {
-        return SightingId;
+        return sightingId;
     }
 
-    public void setApproved(int value) { this.approved = (value == 1); }
+    public void setApproved(String approved) { this.approved = approved; }
 
-    public Boolean getApproved() {
+    public String getApproved() {
         return approved;
     }
 }
