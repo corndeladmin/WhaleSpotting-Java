@@ -44,12 +44,11 @@ public class SightingController {
     return "sightings_map";
   }
 
-  //
-  //    @GetMapping("/sightings/approved")
-  //    public String getAllApprovedSightings(Model model) {
-  //        model.addAttribute("approvedSightings", this.sightingService.getAllApprovedSightings());
-  //        return "sightings_approved";
-  //    }
+  @GetMapping("/sightings")
+  public String getAllApprovedSightings(Model model) {
+      model.addAttribute("approvedSightings", this.sightingService.getAllApprovedSightings());
+      return "sightings";
+  }
 
   // submits the add-sighting form data
   @PostMapping("/add-whale-sighting")
@@ -62,16 +61,6 @@ public class SightingController {
     sightingService.addSighting(sighting);
     return "add_sighting_confirmation";
   }
-
-  @GetMapping("/sightings")
-  public String getAllSightings(Model model) {
-    model.addAttribute("sightings", sightingService.getAllSightings());
-    return "sighting_test";
-  }
-
-  @GetMapping("/sightings/approved")
-  @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-  public void getAllApprovedSightings() {}
 
   @GetMapping("/sightings/pending")
   @ResponseStatus(HttpStatus.OK)
