@@ -21,7 +21,7 @@ public class SightingValidationTests {
         Validator validator =  Validation.buildDefaultValidatorFactory().getValidator();
         Sighting sighting = new Sighting(
                 new Date(0L),
-                100.0D,
+                10.0D,
                 57.0D
         );
         sighting.setMemberId(1L);
