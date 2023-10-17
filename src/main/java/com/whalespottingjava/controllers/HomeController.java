@@ -16,16 +16,16 @@ public class HomeController {
     public String getHomePage(Model model) {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();
-        Boolean isLoggedIn = authentication.isAuthenticated();
-        System.out.println(isLoggedIn);
-        model.addAttribute("isLoggedIn", isLoggedIn);
+        Boolean isLoggedIn = false;
         if (authentication.getPrincipal() instanceof MemberDetails) {
             MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
             MemberRole role = memberDetails.getMember().getRole();
             if (role == MemberRole.ADMIN) {
                 model.addAttribute("role", role);
             }
+            isLoggedIn = true;
         }
+        model.addAttribute("isLoggedIn", isLoggedIn);
         return "home";
     }
 }
