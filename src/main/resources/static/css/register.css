@@ -27,13 +27,16 @@
     display: inline-flex;
     flex-direction: column;
 }
+
 .label-container {
     display: inline-flex;
     flex-direction: column;
 }
+
 .register-button {
     margin-left: auto;
 }
+
 .register-button > input {
     font-weight: 400;
 	text-align: center;
@@ -49,6 +52,7 @@
     border: 1px solid black;
     border-radius: .25rem;
 }
+
 .waves {
     position: fixed;
     bottom: 0;
