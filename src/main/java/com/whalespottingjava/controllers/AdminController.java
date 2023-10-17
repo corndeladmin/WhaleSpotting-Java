@@ -35,7 +35,7 @@ public class AdminController {
 
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
-    public String postSightings(@RequestBody List<AdminApprovalRequest> list, Model model) {
+    public String postAdminApprovalRequest(@RequestBody List<AdminApprovalRequest> list, Model model) {
         for (AdminApprovalRequest sighting: list) {
             if (sighting.getApproved() == false) {
                 sightingService.deleteRejectedPendingSighting(sighting.getId());
