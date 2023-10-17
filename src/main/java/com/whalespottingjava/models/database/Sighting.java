@@ -1,8 +1,7 @@
 package com.whalespottingjava.models.database;
 
-import java.sql.Date;
-
 import jakarta.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "whale_sighting")

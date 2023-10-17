@@ -14,7 +14,7 @@
     <div class="sightings-results-section">
         <ul class="sightings-list">
             <li class="results-list">
-                <div class="sightings-list" th:each="sighting: ${sightings}">
+                <div class="sightings-list" th:each="sighting: ${approvedSightings}">
                     <div class="result-item">
                         <br>Date: <td th:text="${sighting.date}" /></br>
                         <br>Latitude: <td th:text="${sighting.latitude}" /></br>
