@@ -3,7 +3,6 @@ package com.whalespottingjava.models.validation.annotations;
 import com.whalespottingjava.models.validation.validators.LatitudeValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-
 import java.lang.annotation.*;
 
 @Documented

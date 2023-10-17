@@ -2,7 +2,6 @@ package com.whalespottingjava.models.database;
 
 import com.whalespottingjava.models.validation.annotations.LatitudeConstraint;
 import com.whalespottingjava.models.validation.annotations.LongitudeConstraint;
-import com.whalespottingjava.models.validation.annotations.MemberIdConstraint;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
