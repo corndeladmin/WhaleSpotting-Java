@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.whalespottingjava.models.MemberDetails;
+import com.whalespottingjava.models.enums.MemberRole;
 
 @Controller
 public class FaqController {
