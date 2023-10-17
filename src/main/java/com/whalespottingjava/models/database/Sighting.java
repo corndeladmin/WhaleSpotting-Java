@@ -15,7 +15,6 @@ public class Sighting {
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = ID_SEQUENCE)
   @Hidden
   private Long id;
-  
   @Column(nullable = false)
   private Long member_id;
   @PastOrPresent
