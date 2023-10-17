@@ -1,4 +1,4 @@
-package com.whalespottingjava.models.validation;
+package com.whalespottingjava.models.validation.validators;
 
 import com.whalespottingjava.models.validation.annotations.LatitudeConstraint;
 import jakarta.validation.ConstraintValidator;

@@ -1,6 +1,8 @@
 package com.whalespottingjava.models.database;
 
 import com.whalespottingjava.models.validation.annotations.LatitudeConstraint;
+import com.whalespottingjava.models.validation.annotations.LongitudeConstraint;
+import com.whalespottingjava.models.validation.annotations.MemberIdConstraint;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -19,12 +21,16 @@ public class Sighting {
   private Long id;
 
   @Column(nullable = false)
+  @Valid
   private Long member_id;
   @PastOrPresent
+  @Valid
   private Date date;
   @LatitudeConstraint
   @Valid
   private double latitude;
+  @LongitudeConstraint
+  @Valid
   private double longitude;
   @Hidden
   private Boolean approved;
