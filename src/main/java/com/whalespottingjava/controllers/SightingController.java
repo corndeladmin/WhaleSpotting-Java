@@ -23,12 +23,20 @@ public class SightingController {
     this.sightingService = sightingService;
   }
 
-  // renders the add-sighting form
-  @GetMapping("/add-whale-sighting")
-  public String getAddSightingPage(Model model) {
-    model.addAttribute("sighting", new Sighting());
-    return "add_sighting";
-  }
+    //renders the add-sighting form
+    @GetMapping("/add-whale-sighting")
+    public String getAddSightingPage(Model model) {
+        Sighting sighting = new Sighting();
+        model.addAttribute("sighting", sighting);
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        Authentication authentication = securityContext.getAuthentication();
+        MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
+        Boolean isLoggedIn = authentication.isAuthenticated();
+        Long memberId = memberDetails.getMember().getId();
+        model.addAttribute("memberId", memberId);
+        model.addAttribute("isLoggedIn", isLoggedIn);
+        return "add_sighting";
+    }
 
   @GetMapping("/sightings/test")
   public String getAllSighting(Model model) {
