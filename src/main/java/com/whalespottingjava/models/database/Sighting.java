@@ -1,6 +1,8 @@
 package com.whalespottingjava.models.database;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.PastOrPresent;
 import java.sql.Date;
 
 @Entity
@@ -11,14 +13,16 @@ public class Sighting {
   @Id
   @SequenceGenerator(name = ID_SEQUENCE, sequenceName = ID_SEQUENCE, allocationSize = 1)
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = ID_SEQUENCE)
+  @Hidden
   private Long id;
-
+  
   @Column(nullable = false)
   private Long member_id;
-
+  @PastOrPresent
   private Date date;
   private double latitude;
   private double longitude;
+  @Hidden
   private Boolean approved;
 
   public Sighting() {}
