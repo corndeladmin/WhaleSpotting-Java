@@ -2,11 +2,9 @@ package com.whalespottingjava.services;
 
 import com.whalespottingjava.models.database.Sighting;
 import com.whalespottingjava.repositories.SightingRepository;
-import groovy.transform.stc.ClosureSignatureHint;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -32,6 +30,10 @@ public class SightingService {
         return this.sightingRepository.findByApprovedTrue();
     }
 
+    public void addBulkSightings(List<Sighting> sightings) {
+        this.sightingRepository.saveAll(sightings);
+    } 
+      
     public List<Sighting> getAllPendingSightings() {
         return this.sightingRepository.findByApprovedFalse();
     }
