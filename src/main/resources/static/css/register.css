@@ -1,16 +1,17 @@
 @media (min-width: 640px) {
-    .register-heading { font-size: 40px; }
-    .register-textfields { height: 1.5rem; width: 250px; }
     .warning-state { font-size: 12px; }
     .register-button { font-size: 24px; }
-
+    .form-container { gap: 1.25rem; }
+    .label-container { font-size: 24px; }
+    .input-field { min-width: 220px; }
 }
 
 @media (max-width: 640px) {
-    .register-heading { font-size: 16px; }
-    .register-textfields { height: 1rem; width: 200px; }
     .warning-state { font-size: 8px; }
     .register-button { font-size: 16px; }
+    .form-container { gap: 0.75rem; }
+    .label-container { font-size: 14px; }
+    .input-field { min-width: 150px; }
 }
 
 .register-container {
