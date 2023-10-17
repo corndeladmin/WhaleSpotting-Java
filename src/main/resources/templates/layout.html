@@ -51,11 +51,11 @@
             </li>
             <!-- If logged in, render sign out link, otherwise render sign in and register links-->
             <li class="navbar-item">
-                <span th:unless="${isLoggedIn == true}">
+                <span sec:authorize="!(getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails))">
                     <a class="navbar-link loggedOutOptions" th:href="@{/login}">Sign In</a>
                 </span>
                 <a class="navbar-link loggedOutOptions" th:href="@{/register}">Register</a>
-                <span th:if="${isLoggedIn  == true}">
+                <span sec:authorize="getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails)">
                 <a class='navbar-link' href='javascript: document.logoutForm.submit()'>Sign Out</a>
                     <form name='logoutForm' th:action="@{/logout}" method="post" th:hidden="true">
                         <input hidden type="submit"/>

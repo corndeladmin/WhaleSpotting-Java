@@ -16,11 +16,7 @@ public class FaqController {
     public String getFaqPage(Model model) {
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();
-        Boolean isLoggedIn = false;
-        if (authentication.getPrincipal() instanceof MemberDetails) {
-            MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
-            isLoggedIn = true;
-        }
+        Boolean isLoggedIn = authentication.isAuthenticated();
         model.addAttribute("isLoggedIn", isLoggedIn);
         return "faq";
     }

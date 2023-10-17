@@ -14,18 +14,6 @@ import com.whalespottingjava.models.enums.MemberRole;
 public class HomeController {
     @GetMapping("/")
     public String getHomePage(Model model) {
-        SecurityContext securityContext = SecurityContextHolder.getContext();
-        Authentication authentication = securityContext.getAuthentication();
-        Boolean isLoggedIn = false;
-        if (authentication.getPrincipal() instanceof MemberDetails) {
-            MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
-            MemberRole role = memberDetails.getMember().getRole();
-            if (role == MemberRole.ADMIN) {
-                model.addAttribute("role", role);
-            }
-            isLoggedIn = true;
-        }
-        model.addAttribute("isLoggedIn", isLoggedIn);
         return "home";
     }
 }
