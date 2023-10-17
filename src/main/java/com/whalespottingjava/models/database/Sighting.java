@@ -2,7 +2,9 @@ package com.whalespottingjava.models.database;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.PastOrPresent;
+import org.springframework.validation.annotation.Validated;
 import java.sql.Date;
 
 @Entity
