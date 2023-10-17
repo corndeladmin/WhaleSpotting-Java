@@ -3,9 +3,10 @@
     .input-field {min-width: 220px;}
     .form-container {gap: 1.25rem;}
     .content-container {align-items: center;}
-    .sightings-heading {
+    h1{
         font-size: 40px;
-        text-align: center;}
+        text-align: center;
+    }
 
     .sightings-section {
         width: 90%;
@@ -60,9 +61,9 @@
     .label-container {font-size: 14px;}
     .input-field {min-width: 150px;}
     .form-container {gap: 0.75rem;}
-    .sightings-heading {
+    h1{
         text-align: center;
-        font-size: 12px;
+        font-size: 21px;
     }
     .sightings-section {
         width: 100%;
@@ -111,4 +112,12 @@
         border-bottom: 5px solid gray;
         text-align: center;
     }
+    .waves > svg { height: 150px; }
+}
+.waves {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    transform: scaleY(1.1);
 }
