@@ -33,6 +33,6 @@ public class MembersController {
         if(memberDetails.getMember().getPassword().equals(oldPassword)){ //encrypted or normal?
             memberDetails.getMember().setPassword(newPassword);
         }
-        return "my_account";
+        return "redirect:/my_account";
     }
 }
