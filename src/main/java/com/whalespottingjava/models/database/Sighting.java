@@ -20,16 +20,12 @@ public class Sighting {
   private Long id;
 
   @Column(nullable = false)
-  @Valid
   private Long member_id;
   @PastOrPresent
-  @Valid
   private Date date;
   @LatitudeConstraint
-  @Valid
   private double latitude;
   @LongitudeConstraint
-  @Valid
   private double longitude;
   @Hidden
   private Boolean approved;
