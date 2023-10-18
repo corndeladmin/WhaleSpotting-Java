@@ -61,6 +61,16 @@ You should be able to create more users by running the app and visiting `http://
 
 ***
 
+## Setting up SMTP GMAIL SERVER
+
+To be able to use contact form you will need to set up 2 environment variables.  
+
+1. Open a command-prompt in this same folder as project.
+2. Run: export EMAIL_USERNAME=whalespottingapp@gmail.com
+3. **Ask Andrej for Password** 
+4. Run: export APP_PASSWORD=**PasswordProvidedByAndrej**
+
+
 ## Style Guide
 
 https://google.github.io/styleguide/javaguide.html
