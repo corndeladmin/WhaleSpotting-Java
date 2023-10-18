@@ -7,7 +7,8 @@ public class AdminApprovalRequests {
     private List<AdminApprovalRequest> adminApprovalRequests;
 
     public AdminApprovalRequests() {}
-    public void setAdminApprovalRequests() {
+
+    public void setAdminApprovalRequests(List<AdminApprovalRequest> adminApprovalRequests) {
         this.adminApprovalRequests = adminApprovalRequests;
     }
 

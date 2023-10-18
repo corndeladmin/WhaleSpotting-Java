@@ -44,10 +44,11 @@
                                      <span th:text="${sighting.getMemberId()}"></span>
                                  </div>
                              </div>
-                            <div class="checkboxgroup" th:each="element: ${status}"  >
-                                <label th:for="${'radio-button-' + sighting.id}" th:text="${element}"></label>
-                                <input type="radio" th:value="${element}" th:name="${sighting.id}" th:id="${'radio-button-' + sighting.id}" />
-
+                             <div class="checkboxgroup">
+                                <input type="radio" th:field="*{adminApprovalRequests[__${index.index}__].approved}" value="true" id="accept" />
+                                <label for="accept">ACCEPT</label>
+                                <input type="radio" th:field="*{adminApprovalRequests[__${index.index}__].approved}" value="false" id="reject" />
+                                <label for="reject">REJECT</label>
                             </div>
                      </div>
                       <div class="flex-container-for-submit">
