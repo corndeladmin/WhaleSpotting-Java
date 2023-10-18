@@ -3,10 +3,26 @@
     .input-field {min-width: 220px;}
     .form-container {gap: 1.25rem;}
     .content-container {align-items: center;}
-    h1{
+    h1 {
         font-size: 40px;
         text-align: center;
     }
+
+    tr, thead, tbody {
+        display: flex;
+        width: 100%;
+        text-align: center;
+    }
+
+    tbody {
+        flex-direction: column;
+    }
+
+    th, td {
+        flex: 1;
+
+    }
+
 
     .sightings-section {
         width: 90%;
@@ -34,26 +50,7 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
-    }
-
-    .results-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .result-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 100%;
         background-color: lightgray;
-        padding: 4px;
-        border-bottom: 5px solid gray;
-        text-align: center;
     }
 }
 
@@ -91,26 +88,7 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
-    }
-
-    .results-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .result-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 100%;
         background-color: lightgray;
-        padding: 4px;
-        border-bottom: 5px solid gray;
-        text-align: center;
     }
     .waves > svg { height: 150px; }
 }
