@@ -36,7 +36,7 @@ public class AdminController {
     @ResponseStatus(HttpStatus.OK)
     public String getAdminPage(Model model) {
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
-        AdminApprovalRequest adminApproval = new AdminApprovalRequest();
+        AdminApprovalRequest adminApproval =  new AdminApprovalRequest();
         model.addAttribute("adminApproval",adminApproval);
         model.addAttribute("flag", true);
         //model.addAttribute("id", adminApproval);
