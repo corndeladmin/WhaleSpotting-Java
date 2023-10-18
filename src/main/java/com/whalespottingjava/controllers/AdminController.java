@@ -36,21 +36,22 @@ public class AdminController {
     @ResponseStatus(HttpStatus.OK)
     public String getAdminPage(Model model) {
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
-        AdminApprovalRequest list = new AdminApprovalRequest();
-        model.addAttribute("list", list);
+        AdminApprovalRequest adminApproval = new AdminApprovalRequest();
+        model.addAttribute("adminApproval",adminApproval);
         model.addAttribute("flag", true);
+        //model.addAttribute("id", adminApproval);
+        //model.addAttribute("approved", adminApproval);
         return "admin";
     }
 
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
-    public String postAdminApprovalRequest(@ModelAttribute("list") AdminApprovalRequest list, Model model) {
-        model.addAttribute("list", list);
-        model.addAttribute("flag", true);
+    public String postAdminApprovalRequest(@ModelAttribute AdminApprovalRequest adminApproval, Model model) {
+        model.addAttribute("adminApproval", adminApproval);
         //model.addAttribute("sightings", sightingService.getAllPendingSightings());
         System.out.println("\n\n\nHERE");
-        System.out.println(list.getId());
-        System.out.println(list.getApproved());
+        System.out.println(adminApproval.getId());
+        System.out.println(adminApproval.getApproved());
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
         return "admin";
     }
