@@ -24,7 +24,7 @@
                 </div>
 
                 <div th:if="${!sightings.empty}">
-                    <form th:action="@{/admin}" method="post" th:object="${adminApproval}">
+                    <form th:action="@{/admin}" method="post" th:object="${form}">
                         <div class="sightings-pending-admin-form" th:each="sighting, index: ${sightings}">
                              <div class="sighting">
                                  <div class="checkboxgroup">

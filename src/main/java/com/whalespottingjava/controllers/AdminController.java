@@ -2,6 +2,7 @@ package com.whalespottingjava.controllers;
 
 import com.whalespottingjava.models.database.Sighting;
 import com.whalespottingjava.models.requests.AdminApprovalRequest;
+import com.whalespottingjava.models.requests.AdminApprovalRequests;
 
 import com.whalespottingjava.services.SightingService;
 import com.whalespottingjava.models.enums.ApprovalStatus;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -36,22 +38,21 @@ public class AdminController {
     @ResponseStatus(HttpStatus.OK)
     public String getAdminPage(Model model) {
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
-        AdminApprovalRequest adminApproval =  new AdminApprovalRequest();
-        model.addAttribute("adminApproval",adminApproval);
-        //model.addAttribute("flag", true);
-        //model.addAttribute("id", adminApproval);
-        //model.addAttribute("approved", adminApproval);
+        AdminApprovalRequests form = new AdminApprovalRequests();
+        //AdminApprovalRequest adminApproval =  new AdminApprovalRequest();
+        model.addAttribute("form", form);
+
         return "admin";
     }
 
+
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
-    public String postAdminApprovalRequest(@ModelAttribute AdminApprovalRequest adminApproval, Model model) {
-        model.addAttribute("adminApproval", adminApproval);
-        //model.addAttribute("sightings", sightingService.getAllPendingSightings());
-        System.out.println("\n\n\nHERE");
-        System.out.println(adminApproval.getId());
-        System.out.println(adminApproval.getApproved());
+    public String postAdminApprovalRequest(@ModelAttribute("form") AdminApprovalRequests form, Model model) {
+        //model.addAttribute("adminApproval", adminApproval);
+        System.out.println(form.getAdminApprovalRequests());
+
+        //System.out.println(adminApproval.getApproved());
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
         return "admin";
     }
