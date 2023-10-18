@@ -54,9 +54,14 @@
                 <span sec:authorize="!(getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails))">
                     <a class="navbar-link loggedOutOptions" th:href="@{/login}">Sign In</a>
                 </span>
-                <a class="navbar-link loggedOutOptions" th:href="@{/register}">Register</a>
+                <span sec:authorize="!(getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails))">
+                    <a class="navbar-link loggedOutOptions" th:href="@{/register}">Register</a>
+                </span>
                 <span sec:authorize="getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails)">
-                <a class='navbar-link' href='javascript: document.logoutForm.submit()'>Sign Out</a>
+                    <a class="navbar-link loggedInOptions" th:href="@{/members/myaccount}">My Account</a>
+                </span>
+                <span sec:authorize="getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails)">
+                <a class='navbar-link loggedInOptions' href='javascript: document.logoutForm.submit()'>Sign Out</a>
                     <form name='logoutForm' th:action="@{/logout}" method="post" th:hidden="true">
                         <input hidden type="submit"/>
                     </form>
