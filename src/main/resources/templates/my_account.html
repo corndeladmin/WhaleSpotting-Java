@@ -60,14 +60,14 @@
             </div>
             <div id="Settings" class="tabcontent">
                 <h1>Change password:</h1>
-                <form id="" action="#" method="POST" th:action="@{/change-password}">
+                <form id="password" action="#" method="POST" th:action="@{/change-password}" th:object="${password}">
                     <div class="detail">
                         <label for="oldPassword">Old password</label>
-                        <input required id="oldPassword" type="password">
+                        <input required id="oldPassword" name="oldPassword" type="password">
                     </div>
                     <div class="detail">
                         <label for="newPassword">New password</label>
-                        <input required id="newPassword" type="password">
+                        <input required id="newPassword" name="newPassword" type="password">
                     </div>
                     <div class="detail">
                         <input type="submit" value="Change Password">
