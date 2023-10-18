@@ -47,8 +47,8 @@
                                  </div>
                              </div>
                                  <div class="checkboxgroup" th:each="element: ${status}"  >
-                                     <label for="radio-button-id1" th:text="${element}"></label>
-                                     <input type="radio" th:field="*{approved}" th:value="${element}" th:name="${sighting.id}" id="radio-button-id1" />
+                                     <label th:for="${'radio-button-' + sighting.id}" th:text="${element}"></label>
+                                     <input type="radio" th:field="*{approved}" th:value="${element}" th:name="${sighting.id}" th:id="${'radio-button-' + sighting.id}" />
                                  </div>
                                  <div class="checkboxgroup">
                                      <!--<input type="hidden" th:field="*{id}" th:value="${sighting.getId()}" /> -->
