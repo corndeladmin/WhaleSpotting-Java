@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head 
-        lang="en"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        xmlns:th="https://www.thymeleaf.org">
-    </head>
-    <body>
-            <table>
-                <tr>
-                    <th>Id</th>
-                    <th>member Id</th>
-                    <th>Date</th>
-                    <th>Latitude</th>
-                    <th>Longitude</th>
-                    <th>Approved?</th>
-                </tr>
-                <tr th:each="sighting: ${sightings}">
-                    <td th:text="${sighting.id}"></td>
-                    <td th:text="${sighting.memberId}"></td>
-                    <td th:text="${sighting.date}"></td>
-                    <td th:text="${sighting.latitude}"></td>
-                    <td th:text="${sighting.longitude}"></td>
-                    <td th:text="${sighting.approved}"></td>
-                </tr>
-            </table>
-    </body>
+  <head
+    lang="en"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:th="https://www.thymeleaf.org"
+  >
+    <link th:href="@{/css/sightings_map.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>member Id</th>
+        <th>Date</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Approved?</th>
+      </tr>
+      <tr th:each="sighting: ${sightings}">
+        <td th:text="${sighting.id}"></td>
+        <td th:text="${sighting.memberId}"></td>
+        <td th:text="${sighting.date}"></td>
+        <td th:text="${sighting.latitude}"></td>
+        <td th:text="${sighting.longitude}"></td>
+        <td th:text="${sighting.approved}"></td>
+      </tr>
+    </table>
+  </body>
 </html>
