@@ -10,16 +10,16 @@
 <section class="sightings-section" layout:fragment="content">
         <h1>Sightings</h1>
     <main class="sightings-results-section">
-        <table class="sightings-list" th:each="sighting: ${approvedSightings}">
+        <table class="sightings-table">
             <thead>
-                <tr>
+                <tr class="table-row">
                     <th scope="col">Date:</th>
                     <th scope="col">Latitude:</th>
                     <th scope="col">Longitude</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="sighting: ${approvedSightings}">
+                <tr class="table-row" th:each="sighting: ${approvedSightings}">
                     <td th:text="${sighting.date}" />
                     <td th:text="${sighting.latitude}" />
                     <td th:text="${sighting.longitude}" />
