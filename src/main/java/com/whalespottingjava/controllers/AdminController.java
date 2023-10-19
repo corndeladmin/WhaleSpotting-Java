@@ -1,5 +1,6 @@
 package com.whalespottingjava.controllers;
 
+import com.whalespottingjava.models.requests.AdminApprovalRequest;
 import com.whalespottingjava.models.requests.AdminApprovalRequests;
 
 import com.whalespottingjava.services.SightingService;
@@ -28,30 +29,37 @@ public class AdminController {
         return ApprovalStatus.values();
     }
 
-
     @GetMapping("/admin")
     @ResponseStatus(HttpStatus.OK)
     public String getAdminPage(Model model) {
-
         AdminApprovalRequests form = new AdminApprovalRequests();
-
         model.addAttribute("form", form);
-
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
-
         return "admin";
     }
-
-
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
     public String postAdminApprovalRequest(@ModelAttribute AdminApprovalRequests form, Model model) {
-        System.out.println(form.getAdminApprovalRequests());
-        
-        model.addAttribute("form", form);
+        int numbOfRequests = form.getAdminApprovalRequests().size();
+        for (AdminApprovalRequest adminApprovalRequest:form.getAdminApprovalRequests()) {
+            System.out.println(adminApprovalRequest.getId());
+            System.out.println(adminApprovalRequest.getApproved());
 
+            if (adminApprovalRequest.getApproved().equals("true") && adminApprovalRequest.getId() != null) {
+                System.out.println("update");
+            }
+
+            if (adminApprovalRequest.getApproved().equals("false") && adminApprovalRequest.getId() != null) {
+                System.out.println("delete");
+            }
+
+            if (adminApprovalRequest.getId() == null | adminApprovalRequest.getApproved() == null) {
+                System.out.println("continue");
+                continue;
+            }
+        }
+        model.addAttribute("form", form);
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
-        
         return "admin";
     }
 }
