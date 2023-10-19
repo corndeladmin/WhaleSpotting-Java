@@ -1,10 +1,10 @@
 package com.whalespottingjava.controllers;
 
+import com.whalespottingjava.models.database.Sighting;
 import com.whalespottingjava.models.requests.AdminApprovalRequest;
 import com.whalespottingjava.models.requests.AdminApprovalRequests;
 
 import com.whalespottingjava.services.SightingService;
-import com.whalespottingjava.models.enums.ApprovalStatus;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,11 +24,6 @@ public class AdminController {
         this.sightingService = sightingService;
     }
 
-    @ModelAttribute("status")
-    public ApprovalStatus[] status() {
-        return ApprovalStatus.values();
-    }
-
     @GetMapping("/admin")
     @ResponseStatus(HttpStatus.OK)
     public String getAdminPage(Model model) {
@@ -37,6 +32,7 @@ public class AdminController {
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
         return "admin";
     }
+
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
     public String postAdminApprovalRequest(@ModelAttribute AdminApprovalRequests form, Model model) {
@@ -44,14 +40,18 @@ public class AdminController {
         for (AdminApprovalRequest adminApprovalRequest:form.getAdminApprovalRequests()) {
 
             if (adminApprovalRequest.getId() == null || adminApprovalRequest.getApproved() == null) {
-                System.out.println("continue");
                 continue;
             }
             else if (adminApprovalRequest.getApproved().equals("true") && adminApprovalRequest.getId() != null) {
-                System.out.println("update");
+                long sightingId = adminApprovalRequest.getId();
+                Boolean approved = true;
+                Sighting sightingToUpdate = sightingService.getSightingById(sightingId);
+                sightingToUpdate.setApproved(approved);
+                sightingService.addSighting(sightingToUpdate); // this should in sighting service all the update
             }
             else if (adminApprovalRequest.getApproved().equals("false") && adminApprovalRequest.getId() != null) {
-                System.out.println("delete");
+                long sightingId = adminApprovalRequest.getId();
+                sightingService.deleteRejectedPendingSighting(sightingId);
             }
         }
         model.addAttribute("form", form);
