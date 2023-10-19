@@ -46,3 +46,11 @@
     font-weight: 500;
     white-space: nowrap;
 }
+
+.loggedOutOptions {
+    margin: 0 10px;
+}
+
+.loggedInOptions {
+    margin:0.5rem;
+}
