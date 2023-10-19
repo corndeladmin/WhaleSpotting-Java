@@ -5,7 +5,6 @@ import com.whalespottingjava.models.validation.annotations.LongitudeConstraint;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.PastOrPresent;
-
 import java.sql.Date;
 
 @Entity
