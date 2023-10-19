@@ -3,6 +3,7 @@ package com.whalespottingjava.controllers;
 import com.whalespottingjava.models.MemberDetails;
 import com.whalespottingjava.models.database.Member;
 import com.whalespottingjava.models.database.Sighting;
+import com.whalespottingjava.services.MemberUpdateService;
 import com.whalespottingjava.util.AuthenticationHelper;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +20,16 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class MembersController {
-
+    private final MemberUpdateService memberUpdateService;
     private final AuthenticationHelper authenticationHelper;
 
     @Autowired
     public MembersController(
-        AuthenticationHelper authenticationHelper
+        AuthenticationHelper authenticationHelper,
+        MemberUpdateService memberUpdateService
     ) {
         this.authenticationHelper = authenticationHelper;
+        this.memberUpdateService = memberUpdateService;
     }
 
     @GetMapping("/members")
@@ -50,9 +53,11 @@ public class MembersController {
         MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
 
         if (encoder.matches(oldPassword, memberDetails.getPassword())) {
-            memberDetails.getMember().setPassword(encodeNewPassword);
+            Member member = memberDetails.getMember();
+            member.setPassword(encodeNewPassword);
+            memberUpdateService.updatePassword(member);
         }
         
-        return "redirect:/my_account";
+        return "redirect:/members/myaccount";
     }
 }

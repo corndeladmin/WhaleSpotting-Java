@@ -28,14 +28,4 @@ public class MemberDetailsService implements UserDetailsService {
 
         return new MemberDetails(member);
     }
-
-    public void changePassWordByUsername(String name, String newPassword) {
-        Member member = memberRepository.findByUsername(name);
-
-        if (member == null) {
-            throw new UsernameNotFoundException("Could not find member with username");
-        }
-
-        member.setPassword(newPassword);
-    }
 }
