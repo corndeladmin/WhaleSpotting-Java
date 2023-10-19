@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorate="layout">
+<html   lang="en"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.w3.org/1999/xhtml"
+        layout:decorate="layout">
 
 <head>
     <title>FAQ</title>
@@ -61,7 +63,7 @@
 
                 <details>
                     <summary>
-                        How long does it usualy take for whale sighting to be approved?
+                        How long does it usually take for whale sighting to be approved?
                         <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" />
                         </svg>
@@ -70,9 +72,14 @@
                         </svg>
                     </summary>
                     <p>
-                        Ussualy we approve sightings within 24 hour, but sometimes it might take us
+                        Usually we approve sightings within 24 hour, but sometimes it might take us
                         up to 48 hours to approve a sighting.</p>
                 </details>
+                <div class="extra-questions">
+                <h2>Still got question?</h2>
+                <p><a  th:href="@{/contact}"> Contact us</a></p>
+                </div>
+
             
             </main>
 
