@@ -33,8 +33,6 @@ public class MemberDetailsService implements UserDetailsService {
     public Member loadMemberById(long id) {
         return memberRepository
                 .findById(id)
-                .orElseThrow(
-                        EntityNotFoundException::new
-                );
+                .orElseThrow(EntityNotFoundException::new);
     }
 }
