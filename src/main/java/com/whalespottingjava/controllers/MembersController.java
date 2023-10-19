@@ -65,6 +65,9 @@ public class MembersController {
             Member member = memberDetails.getMember();
             member.setPassword(encodeNewPassword);
             memberUpdateService.updatePassword(member);
+            model.addAttribute("update", true);
+        } else {
+            model.addAttribute("update", false);
         }
         
         return "redirect:/members/myaccount";
