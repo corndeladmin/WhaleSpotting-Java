@@ -3,7 +3,6 @@ package com.whalespottingjava.controllers;
 import com.whalespottingjava.models.requests.AdminApprovalRequests;
 import com.whalespottingjava.models.requests.AdminApprovalRequest;
 import com.whalespottingjava.services.SightingService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -34,18 +33,19 @@ public class AdminController {
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
     public String postAdminApprovalRequest(@ModelAttribute AdminApprovalRequests form, Model model) {
-
-        for (AdminApprovalRequest adminApprovalRequest:form.getAdminApprovalRequests()) {
+        long sightingId;
+        for (AdminApprovalRequest adminApprovalRequest: form.getAdminApprovalRequests()) {
             if (adminApprovalRequest.getId() == null || adminApprovalRequest.getApproved() == null) {
                 continue;
             } else if (adminApprovalRequest.getApproved().equals("true")) {
-                long sightingId = adminApprovalRequest.getId();
+                sightingId = adminApprovalRequest.getId();
                 sightingService.approveSightingById(sightingId);
             } else if (adminApprovalRequest.getApproved().equals("false")) {
-                long sightingId = adminApprovalRequest.getId();
+                sightingId = adminApprovalRequest.getId();
                 sightingService.deleteRejectedPendingSighting(sightingId);
             }
         }
+
         model.addAttribute("form", form);
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
 
