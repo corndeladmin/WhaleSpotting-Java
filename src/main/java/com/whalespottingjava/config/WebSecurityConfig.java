@@ -36,7 +36,9 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/home", "/register", "/error", "/api", "/api-swagger", "/api/get-all", "/faq", "/contact", "/message", "/api/bulk").permitAll()
+
+                        .requestMatchers("/", "/home", "/register", "/error", "/api", "/api-swagger", "/api/get-all", "/faq", "/contact", "/message", "/api/bulk", "/static/favicon.ico").permitAll()
+
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         .anyRequest().authenticated()
                 )
