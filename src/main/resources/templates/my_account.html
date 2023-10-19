@@ -19,20 +19,34 @@
             </div>
             <div id="Details" class="tabcontent">
                 <div class="detail">
-                    <label for="email">Email </label>
-                    <input id="email" type="email" readonly/>
+                    <strong>
+                        <label for="username-detail">Username:</label>
+                    </strong>
+                    <p th:text="${member.username}" id="username-detail"></p>
+                </div>
+                <div class="detail" th:if="${member.email != null}">
+                    <strong>
+                        <label for="email-detail">Email:</label>
+                    </strong>
+                    <p th:text="${member.email}" id="email-detail"></p>
+                </div>
+                <div class="detail" th:if="${member.firstName != null}">
+                    <strong>
+                        <label for="first-name-detail">First Name:</label>
+                    </strong>
+                    <p th:text="${member.firstName}" id="first-name-detail"></p>
+                </div>
+                <div class="detail" th:if="${member.surname != null}">
+                    <strong>
+                        <label for="surname-detail">Surname:</label>
+                    </strong>
+                    <p th:text="${member.surname}" id="surname-detail"></p>
                 </div>
                 <div class="detail">
-                    <label for="password">Password </label>
-                    <input id="password" type="password" readonly>
-                </div>
-                <div class="detail">
-                    <label for="firstName">First Name </label>
-                    <input id="firstName" type="text" readonly>
-                </div>
-                <div class="detail">
-                    <label for="lastName">Last Name </label>
-                    <input id="lastName" type="text" readonly>
+                    <strong>
+                        <label for="member-id-detail">Member ID:</label>
+                    </strong>
+                    <p th:text="${member.id}" id="member-id-detail"></p>
                 </div>
             </div>
             <div id="Preferences" class="tabcontent preference">

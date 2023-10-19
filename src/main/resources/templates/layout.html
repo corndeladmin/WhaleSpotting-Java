@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Whale Spotting</title>
+    <link rel="icon" type="image/ico" th:href="@{../static/favicon.ico}">
 </head>
 <body class="page-container">
     <nav class="navbar-container">
@@ -39,7 +40,7 @@
                 <a class="navbar-link" th:href="@{/faq}">FAQ/INFO</a>
             </li>
             <li class="navbar-item">
-                <a class="navbar-link" th:href="@{/}">API</a>
+                <a class="navbar-link" th:href="@{/api}">API</a>
             </li>
             <li class="navbar-item">
                 <a class="navbar-link" th:href="@{/add-whale-sighting}">Add Whale Sighting</a>
@@ -54,9 +55,14 @@
                 <span sec:authorize="!(getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails))">
                     <a class="navbar-link loggedOutOptions" th:href="@{/login}">Sign In</a>
                 </span>
-                <a class="navbar-link loggedOutOptions" th:href="@{/register}">Register</a>
+                <span sec:authorize="!(getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails))">
+                    <a class="navbar-link loggedOutOptions" th:href="@{/register}">Register</a>
+                </span>
                 <span sec:authorize="getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails)">
-                <a class='navbar-link' href='javascript: document.logoutForm.submit()'>Sign Out</a>
+                    <a class="navbar-link loggedInOptions" th:href="@{/members/myaccount}">My Account</a>
+                </span>
+                <span sec:authorize="getPrincipal() instanceof T(com.whalespottingjava.models.MemberDetails)">
+                    <a class='navbar-link loggedInOptions' href='javascript: document.logoutForm.submit()'>Sign Out</a>
                     <form name='logoutForm' th:action="@{/logout}" method="post" th:hidden="true">
                         <input hidden type="submit"/>
                     </form>
