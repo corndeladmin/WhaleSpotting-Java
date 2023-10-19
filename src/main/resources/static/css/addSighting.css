@@ -17,10 +17,10 @@ Lightest-Blue: #42BFDD
 }
 
 .addSighting-container{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 form > input {
@@ -30,14 +30,12 @@ form > input {
     border-radius: 5px;
 }
 
-.add-sighting-button-div {
-margin: 0.5rem 0 0.5rem auto;
-}
+.add-sighting-button-div { margin: 0.5rem 0 0.5rem auto;}
 
 #add-sighting-button {
- background-color: #064172;
- color:white;
- text-align: center;
+    background-color: #064172;
+    color:white;
+    text-align: center;
 }
 .waves {
     opacity:0.5;
@@ -49,7 +47,6 @@ margin: 0.5rem 0 0.5rem auto;
 }
 
 @media screen and (min-width: 640px) {
-
     #add-sighting {width: unset; margin: 2rem;}
     #add-sighting-header {font-size: 40px}
     #add-sighting-details {font-size: 25px}
@@ -63,6 +60,4 @@ margin: 0.5rem 0 0.5rem auto;
        #add-sighting {margin-top: 3rem}
        form > input {min-width: 180px}
        #add-sighting-button {font-size: 12px; width:90px}
-
   }
-

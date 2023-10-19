@@ -16,7 +16,6 @@
 <!--            <span th:if="${memberId != null}">logged in</span>-->
 <!--            <span th:text="${memberId != null} ? ${memberId} : 'null value!'">someValue</span>-->
             <form id="add-sighting" action="#" method="POST" th:action="@{/add-whale-sighting}" th:object="${sighting}">
-                
                 <label for="date">
                     Date of Sighting
                 </label>
