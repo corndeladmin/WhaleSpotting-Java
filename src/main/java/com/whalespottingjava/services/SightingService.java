@@ -2,14 +2,11 @@ package com.whalespottingjava.services;
 
 import com.whalespottingjava.models.database.Sighting;
 import com.whalespottingjava.repositories.SightingRepository;
-import groovy.transform.stc.ClosureSignatureHint;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -43,4 +40,11 @@ public class SightingService {
     }
 
     public void deleteRejectedPendingSighting(Long sightingId) { sightingRepository.deleteById(sightingId); }
+
+    public  void approveSightingById(Long sightingId) {
+        Boolean approved = true;
+        Sighting sightingToUpdate = getSightingById(sightingId);
+        sightingToUpdate.setApproved(approved);
+        sightingRepository.saveAndFlush(sightingToUpdate);
+    }
 }

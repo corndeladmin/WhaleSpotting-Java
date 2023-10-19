@@ -44,10 +44,7 @@ public class AdminController {
             }
             else if (adminApprovalRequest.getApproved().equals("true") && adminApprovalRequest.getId() != null) {
                 long sightingId = adminApprovalRequest.getId();
-                Boolean approved = true;
-                Sighting sightingToUpdate = sightingService.getSightingById(sightingId);
-                sightingToUpdate.setApproved(approved);
-                sightingService.addSighting(sightingToUpdate); // this should in sighting service all the update
+                sightingService.approveSightingById(sightingId);
             }
             else if (adminApprovalRequest.getApproved().equals("false") && adminApprovalRequest.getId() != null) {
                 long sightingId = adminApprovalRequest.getId();
