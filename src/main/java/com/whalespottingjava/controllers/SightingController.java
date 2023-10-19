@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @Controller
 public class SightingController {
@@ -67,12 +66,5 @@ public class SightingController {
     public String getPendingSightings(Model model) {
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
         return "sightings_map";
-    }
-
-    @GetMapping("/delete/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public String deleteSightingById(@PathVariable(value="id") Long id) {
-        sightingService.deleteRejectedPendingSighting(id);
-        return "redirect:/sightings/pending";
     }
 }

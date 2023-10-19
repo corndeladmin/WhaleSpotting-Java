@@ -21,8 +21,11 @@ public class SightingService {
         return sightingRepository.findAll();
     }
 
-    public void addSighting(Sighting sighting) 
-    {
+    public Sighting getSightingById(Long id) {
+        return sightingRepository.getReferenceById(id);
+    }
+
+    public void addSighting(Sighting sighting) {
         sightingRepository.saveAndFlush(sighting);
     }
 
@@ -38,5 +41,13 @@ public class SightingService {
         return this.sightingRepository.findByApprovedFalse();
     }
 
-    public void deleteRejectedPendingSighting(Long sightingId) { sightingRepository.deleteById(sightingId); }
+    public void deleteRejectedPendingSighting(Long sightingId) {
+        sightingRepository.deleteById(sightingId);
+    }
+
+    public  void approveSightingById(Long sightingId) {
+        Sighting sightingToUpdate = getSightingById(sightingId);
+        sightingToUpdate.setApproved(true);
+        sightingRepository.saveAndFlush(sightingToUpdate);
+    }
 }
