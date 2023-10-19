@@ -5,10 +5,6 @@ Darker-Blue: #1D77C3
 Lightest-Blue: #42BFDD
 */
 
-body {
-    background-color: #42BFDD;
-}
-
 #add-sighting {
     display: flex;
     flex-direction: column;
@@ -20,28 +16,48 @@ body {
     font-weight: bold;
 }
 
+.addSighting-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
 form > input {
     margin: 10px 0;
     padding: 7px 5px;
-    border: none;
+    border: solid 1px grey;
     border-radius: 5px;
-    max-width: 175px;
 }
 
-#add-sighting-header, #add-sighting-details {
-    width: 200px;
-    margin: 0 auto 20px auto;
+.add-sighting-button-div { margin: 0.5rem 0 0.5rem auto;}
+
+#add-sighting-button {
+    background-color: #064172;
+    color:white;
+    text-align: center;
+}
+.waves {
+    opacity:0.5;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-@media screen and (min-width: 500px) {
-    #add-sighting-header, #add-sighting-details {
-        width: unset;
-        margin: 0 0 20px 0;
-    }
-
-    #add-sighting {
-        width: unset;
-        margin: 0;
-    }
+@media screen and (min-width: 640px) {
+    #add-sighting {width: unset; margin: 2rem;}
+    #add-sighting-header {font-size: 40px}
+    #add-sighting-details {font-size: 25px}
+    form > label {font-size: font-size: 25px}
+    form > input {min-width: 250px}
 }
 
+@media screen and (max-width: 640px) {
+       #add-sighting-header { margin: none}
+       #add-sighting-details {margin: 0.5rem}
+       #add-sighting {margin-top: 3rem}
+       form > input {min-width: 180px}
+       #add-sighting-button {font-size: 12px; width:90px}
+  }
