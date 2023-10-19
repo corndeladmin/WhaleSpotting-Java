@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MembersController {
@@ -51,23 +52,23 @@ public class MembersController {
         return "my_account";
     }
 
-    @PostMapping("/change-password")
-    public String submitSighting(Model model, String oldPassword, String newPassword) {
-        BCryptPasswordEncoder encoder = authenticationHelper.passwordEncoder();
+    @PostMapping("/members/myaccount/change-password")
+    public String submitSighting(Model model, String oldPassword, String newPassword, RedirectAttributes redirectAttributes) {
+        BCryptPasswordEncoder encoder = this.authenticationHelper.passwordEncoder();
         String encodeNewPassword = encoder.encode(newPassword);
-
         SecurityContext securityContext = SecurityContextHolder.getContext();
         Authentication authentication = securityContext.getAuthentication();
-
         MemberDetails memberDetails = (MemberDetails) authentication.getPrincipal();
+        Member member;
 
         if (encoder.matches(oldPassword, memberDetails.getPassword())) {
-            Member member = memberDetails.getMember();
+            member = memberDetails.getMember();
             member.setPassword(encodeNewPassword);
-            memberUpdateService.updatePassword(member);
-            model.addAttribute("update", true);
+            this.memberUpdateService.updatePassword(member);
+
+            redirectAttributes.addFlashAttribute("isValid", true);
         } else {
-            model.addAttribute("update", false);
+            redirectAttributes.addFlashAttribute("isValid", false);
         }
         
         return "redirect:/members/myaccount";

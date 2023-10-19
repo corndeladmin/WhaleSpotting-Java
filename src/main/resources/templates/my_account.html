@@ -49,7 +49,7 @@
                     <p th:text="${member.id}" id="member-id-detail"></p>
                 </div>
             </div>
-            <div id="Preferences" class="tabcontent preference">
+            <div id="Preferences" class="tabcontent">
                 <div class="detail">
                     <label class="switch">
                         <input type="checkbox">
@@ -73,8 +73,12 @@
                 </div>
             </div>
             <div id="Settings" class="tabcontent">
+                <div th:if="${isValid != null}">
+                    <p th:if="${isValid}" th:text="${'Password Updated'}"></p>
+                    <p th:if="${!isValid}" th:text="${'Please enter a valid password'}"></p>
+                </div>
                 <h1>Change password:</h1>
-                <form id="password" action="#" method="POST" th:action="@{/change-password}" th:object="${password}">
+                <form id="password" action="#" method="POST" th:action="@{/members/myaccount/change-password}" th:object="${password}">
                     <div class="detail">
                         <label for="oldPassword">Old password</label>
                         <input required id="oldPassword" name="oldPassword" type="password">
