@@ -1,9 +1,7 @@
 package com.whalespottingjava.controllers;
 
-import com.whalespottingjava.models.database.Sighting;
-import com.whalespottingjava.models.requests.AdminApprovalRequest;
 import com.whalespottingjava.models.requests.AdminApprovalRequests;
-
+import com.whalespottingjava.models.requests.AdminApprovalRequest;
 import com.whalespottingjava.services.SightingService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,30 +27,28 @@ public class AdminController {
     public String getAdminPage(Model model) {
         AdminApprovalRequests form = new AdminApprovalRequests();
         model.addAttribute("form", form);
-        model.addAttribute("sightings", sightingService.getAllPendingSightings());
+
         return "admin";
     }
 
     @PostMapping("/admin")
     @ResponseStatus(HttpStatus.CREATED)
     public String postAdminApprovalRequest(@ModelAttribute AdminApprovalRequests form, Model model) {
-        int numbOfRequests = form.getAdminApprovalRequests().size();
-        for (AdminApprovalRequest adminApprovalRequest:form.getAdminApprovalRequests()) {
 
+        for (AdminApprovalRequest adminApprovalRequest:form.getAdminApprovalRequests()) {
             if (adminApprovalRequest.getId() == null || adminApprovalRequest.getApproved() == null) {
                 continue;
-            }
-            else if (adminApprovalRequest.getApproved().equals("true") && adminApprovalRequest.getId() != null) {
+            } else if (adminApprovalRequest.getApproved().equals("true")) {
                 long sightingId = adminApprovalRequest.getId();
                 sightingService.approveSightingById(sightingId);
-            }
-            else if (adminApprovalRequest.getApproved().equals("false") && adminApprovalRequest.getId() != null) {
+            } else if (adminApprovalRequest.getApproved().equals("false")) {
                 long sightingId = adminApprovalRequest.getId();
                 sightingService.deleteRejectedPendingSighting(sightingId);
             }
         }
         model.addAttribute("form", form);
         model.addAttribute("sightings", sightingService.getAllPendingSightings());
+
         return "admin";
     }
 }
