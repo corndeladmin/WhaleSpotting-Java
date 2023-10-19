@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html layout:decorate="layout"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Account</title>
+    <link th:href="@{/css/my_account.css}" rel="stylesheet"/>
+</head>
+<body class="page-container" layout:fragment="content">
+    <div class="myaccount-body">
+        <div >
+            <h1>My Account</h1>
+        </div>
+        <div>
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Details')">Details</button>
+                <button class="tablinks" onclick="openTab(event, 'Preferences')">Preferences</button>
+                <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
+            </div>
+            <div id="Details" class="tabcontent">
+                <div class="detail">
+                    <strong>
+                        <label for="username-detail">Username:</label>
+                    </strong>
+                    <p th:text="${member.username}" id="username-detail"></p>
+                </div>
+                <div class="detail" th:if="${member.email != null}">
+                    <strong>
+                        <label for="email-detail">Email:</label>
+                    </strong>
+                    <p th:text="${member.email}" id="email-detail"></p>
+                </div>
+                <div class="detail" th:if="${member.firstName != null}">
+                    <strong>
+                        <label for="first-name-detail">First Name:</label>
+                    </strong>
+                    <p th:text="${member.firstName}" id="first-name-detail"></p>
+                </div>
+                <div class="detail" th:if="${member.surname != null}">
+                    <strong>
+                        <label for="surname-detail">Surname:</label>
+                    </strong>
+                    <p th:text="${member.surname}" id="surname-detail"></p>
+                </div>
+                <div class="detail">
+                    <strong>
+                        <label for="member-id-detail">Member ID:</label>
+                    </strong>
+                    <p th:text="${member.id}" id="member-id-detail"></p>
+                </div>
+            </div>
+            <div id="Preferences" class="tabcontent preference">
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                         <p>Dark Mode</p>
+                    </label>
+                </div>
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        <p>Private Profile</p>
+                    </label>
+                </div>
+                <div class="detail">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                        <p>Keep me signed in</p>
+                    </label>
+                </div>
+            </div>
+            <div id="Settings" class="tabcontent">
+                <h1>Change password:</h1>
+                <form id="" action="#" method="POST" th:action="@{/change-password}">
+                    <div class="detail">
+                        <label for="oldPassword">Old password</label>
+                        <input required id="oldPassword" type="password">
+                    </div>
+                    <div class="detail">
+                        <label for="newPassword">New password</label>
+                        <input required id="newPassword" type="password">
+                    </div>
+                    <div class="detail">
+                        <input type="submit" value="Change Password">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script>
+    function openTab(evt, tab) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  if(document.getElementById(tab).id == "Preferences"){
+  document.getElementById(tab).style.display = "flex";
+  }
+  else{
+  document.getElementById(tab).style.display = "block";
+  }
+  
+
+  evt.currentTarget.className += " active";
+}
+</script>
+</body>
+</html>

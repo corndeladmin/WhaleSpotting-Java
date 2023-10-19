@@ -14,7 +14,7 @@
                 <div th:if="${param.error}">
                     There was an error loading the pending sightings.
                 </div>
-                <div th:if="${sightings.empty}">  <!-- issue solved in ticket WS-072-AdminPage-->
+                <div class="sightings-pending-empty" th:if="${sightings.empty}">
                     All pending sightings have been approved. There is no task to do.
                     Time for tea & cake!
                 </div>
@@ -58,9 +58,7 @@
                       </div>
               </form>
           </div>
-
       </div>
-
   </section>
 </body>
 </html>

@@ -64,3 +64,7 @@ You should be able to create more users by running the app and visiting `http://
 ## Style Guide
 
 https://google.github.io/styleguide/javaguide.html
+
+## Naming Standards:
+
+- Branch Names: `WS-xxx-ticket-name`
