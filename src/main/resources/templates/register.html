@@ -21,12 +21,30 @@
                         <input class="input-field" id="username"  th:field="*{username}" type="text" name="username"/>
                     </label>
                 </div>
+            <div>
+                <label class="label-container">
+                    Email
+                    <input class="input-field" id="email"  th:field="*{email}" type="text" name="email"/>
+                </label>
+            </div>
                 <div>
                     <label class="label-container">
                         Password
                         <input class="input-field" name="password" th:field="*{password}" type="password"/>
                     </label>
                 </div>
+            <div>
+                <label class="label-container">
+                    First Name
+                    <input class="input-field" id="firstName"  th:field="*{firstName}" type="text" name="firstName"/>
+                </label>
+            </div>
+            <div>
+                <label class="label-container">
+                    Las Name
+                    <input class="input-field" id="surname"  th:field="*{surname}" type="text" name="surname"/>
+                </label>
+            </div>
                 <div class="register-button">
                     <input type="submit" value="Register"/>
                 </div>
