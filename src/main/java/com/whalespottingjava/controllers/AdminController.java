@@ -42,20 +42,16 @@ public class AdminController {
     public String postAdminApprovalRequest(@ModelAttribute AdminApprovalRequests form, Model model) {
         int numbOfRequests = form.getAdminApprovalRequests().size();
         for (AdminApprovalRequest adminApprovalRequest:form.getAdminApprovalRequests()) {
-            System.out.println(adminApprovalRequest.getId());
-            System.out.println(adminApprovalRequest.getApproved());
 
-            if (adminApprovalRequest.getApproved().equals("true") && adminApprovalRequest.getId() != null) {
-                System.out.println("update");
-            }
-
-            if (adminApprovalRequest.getApproved().equals("false") && adminApprovalRequest.getId() != null) {
-                System.out.println("delete");
-            }
-
-            if (adminApprovalRequest.getId() == null | adminApprovalRequest.getApproved() == null) {
+            if (adminApprovalRequest.getId() == null || adminApprovalRequest.getApproved() == null) {
                 System.out.println("continue");
                 continue;
+            }
+            else if (adminApprovalRequest.getApproved().equals("true") && adminApprovalRequest.getId() != null) {
+                System.out.println("update");
+            }
+            else if (adminApprovalRequest.getApproved().equals("false") && adminApprovalRequest.getId() != null) {
+                System.out.println("delete");
             }
         }
         model.addAttribute("form", form);
